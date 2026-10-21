@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "review": {
+    "reviewer": "volume_view_astra_review",
+    "verdict": "APPROVE affected source delta",
+    "base": "a8ae59c3b300bd99ab28bb03691f1cb20ed648cc",
+    "candidate": "d51c8306bddcfd568f6a271e89b3b4879dd2a6cd"
+  },
+  "gate07": {
+    "passed": 207,
+    "skipped": 2,
+    "nonempty_tasks": 5,
+    "compile_only_zero_test_task": "spatialIoJVM/test",
+    "terminal_failure": "Fixtures JVM test compilation: stale qualified test constructor. All earlier optional tasks completed successfully."
+  },
+  "gate08": {
+    "fixtures_jvm_passed": 21,
+    "fixtures_js_passed": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "oracle_resources_unchanged": [
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-real/fslr-inverse-oracle-all-L.f64le.gz",
+      "sha256": "6ecf0435841cec46acb662b87b079c400e50b4e9700f2f11fa0aa01f8afe4feb",
+      "bytes": 1039407
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-real/fslr-inverse-oracle-all-R.f64le.gz",
+      "sha256": "1c96b3580b43e8da4f6bf689d0dfcb274529023029bd8c813b8b49b447320022",
+      "bytes": 1038661
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-real/fslr-inverse-oracle-all.json",
+      "sha256": "b90cb1cf98d6506e395fba955e063223c43b4b864c17e748c0de6de05821e5f4",
+      "bytes": 1992
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-real/fslr-inverse-oracle.json.gz",
+      "sha256": "d30c98d3463f187de67b9379350c9e8c33a7c6f0ef9d9c38f9f62ddc9b6c9631",
+      "bytes": 345425
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-real/real_2009c_from_6asym_oracle.json.gz",
+      "sha256": "5d7115180a5dec12f144099d374c9bec902f96dd8e01fd0b9a59f9a662a2040a",
+      "bytes": 30334
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-synthetic/manifest.json",
+      "sha256": "ccea7f005d1bec904538a46cd238179f02cef185ac9039211e0a844d7b51ecbe",
+      "bytes": 3287
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-synthetic/stage-0-displacement.nii",
+      "sha256": "26e86cd4df7a3a14eb4d70c2b68f04da3d19db852fcd9acd671f5922ee0a64eb",
+      "bytes": 5392
+    },
+    {
+      "relative_path": "jvm/src/main/resources/pointmap-synthetic/synthetic_composite_oracle.json",
+      "sha256": "083b6b076589037240d466348491cefa1750c8a3a6c287ce2179730192803177",
+      "bytes": 49493
+    }
+  ],
+  "api_change": "Remove obsolete Point3D alias facade; expose spatial4s.Xyz directly. One obsolete alias-only assertion removed per platform; final direct-Xyz core/IO rerun pending.",
+  "limits": "Development overrides; coherent default-pin/classpath qualification and Root cutover pending. Two JS timing opt-ins unexecuted; no new timing/scientific acceptance claim.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-optional-07.log.gz",
+      "raw_sha256": "59ed7ba426e1f3a60eb513b398463cb087196b2092619c11b2ac6e5516f607d7",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:55:57.196636+00:00",
+        "finished_utc": "2026-10-21T17:58:01.233796+00:00",
+        "duration_seconds": 124.035821,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "reload",
+          "spatialJVM/test",
+          "spatialJS/test",
+          "spatialIoJVM/test",
+          "volumeJVM/test",
+          "volumeJS/test",
+          "volumeIoJVM/test",
+          "fixturesJVM/test",
+          "fixturesJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-optional-07.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3000.0,
+        "log_bytes": 36118
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-fixtures-08.log.gz",
+      "raw_sha256": "8bf55485757031fa7db4f16a19b8900116f99806f1ed9a798eab556c520db4be",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:59:42.730054+00:00",
+        "finished_utc": "2026-10-21T18:00:15.603866+00:00",
+        "duration_seconds": 32.873296,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "fixturesJVM/test",
+          "fixturesJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-fixtures-08.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3000.0,
+        "log_bytes": 4028
+      }
+    }
+  ]
+}
