@@ -1,0 +1,488 @@
+{
+  "source_revision": "3d2c494e130904bd355ec60affc6e82724cf887c",
+  "runtime_scala_blobs_same_as_qualified_source": "62b81f43739509a8a1791c49cf6234c6bf072ac5",
+  "export_task_logs": "native-classpaths-28; actual sbt stream export files used because warm client omitted some stdout values",
+  "classpath_inputs": [
+    {
+      "path": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-javafx/jvm/target/streams/test/fullClasspath/_global/streams/export",
+      "sha256": "de460cf671f41bf22a4389e3ae10b40713665a533001161d22edc6a1b5a105ab",
+      "mtime": 1792609024.0290332
+    },
+    {
+      "path": "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/jvm/target/streams/test/fullClasspath/_global/streams/export",
+      "sha256": "cc696b5c0a439579c722cf946411d3c75bf4c92d33e236ec919ac2badf7e904f",
+      "mtime": 1792609027.4327016
+    }
+  ],
+  "records": [
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-javafx/jvm/target/scala-3.7.4/test-classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/000-test-classes.jar",
+      "sha256": "3fc4b535e5712f1fb644a7712b5e269c90ca7a63e60051e1844715c480dd2c4f",
+      "bytes": 2225381
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-javafx/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/001-classes.jar",
+      "sha256": "d3f5dc15a56ed7af3cd26d5926fce1ab565ea8b3aa188b2b36a1724a66e9f192",
+      "bytes": 1720782
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/002-classes.jar",
+      "sha256": "2cd54792dd5817f1cc9c9031e1515ffe0196ff4afc222ccf6679bfe0dfe22165",
+      "bytes": 7804509
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/003-classes.jar",
+      "sha256": "9be5a16b482aa896d60987941452ff2edb7576894f3db35a8bb66f032409ffa6",
+      "bytes": 2933323
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/743bbc500a4cc79953a2/spatial4s/modules/spatial4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/004-classes.jar",
+      "sha256": "956b3b5735ba50e77f05d2dff8e30374103e6ab88ba5557d54fb6a820e708b79",
+      "bytes": 371788
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-data/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/005-classes.jar",
+      "sha256": "a7cb730572978ce517086762c0927772ab7e3ac437361a17b7805d8c244cb8ce",
+      "bytes": 145053
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/006-classes.jar",
+      "sha256": "e970ad99aa1051a08b0ed9f2d482f0fd73e20c9642bd67e1760fa6192e901ca4",
+      "bytes": 1027771
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-geometry/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/007-classes.jar",
+      "sha256": "43efd8f2024cd6871cd119e0b0fa6fd26ef12b9c4fd602e0abae9152a388e375",
+      "bytes": 605291
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/008-classes.jar",
+      "sha256": "db89529e1404acdca606f1d160db0f75abe38f0d4b4110789edb5c1356562df2",
+      "bytes": 804653
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-graph4s/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/009-classes.jar",
+      "sha256": "80921822e3e1429f8fe7955d7481b60dba7449557c963c3f9897de0a68334e6e",
+      "bytes": 136879
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/core/.jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/010-classes.jar",
+      "sha256": "033cf8492e0373c8c2fa75578dd0b8c1558b4b47fd7d33af52202f6dd8185b3d",
+      "bytes": 438667
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/indexed/.jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/011-classes.jar",
+      "sha256": "46da7ff8af0235652d2950177cbbf0fa7f256f3f959dd8c9b4b4d3990bc48d19",
+      "bytes": 159392
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/algorithms/.jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/012-classes.jar",
+      "sha256": "c4c22f712ef467a61258e11d20f4baaf6e05f08c22eba699ae70501819a959e3",
+      "bytes": 301812
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/data/.jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/013-classes.jar",
+      "sha256": "f435a22cf3bb09fd71a84bb62e7693e8785efc5c613f4132c8c91281ec65134c",
+      "bytes": 219640
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-geometry/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/014-classes.jar",
+      "sha256": "12088a7ed3909f1fa064fa446c38eaac69819a2454d7505ee98181d88ccdcf0b",
+      "bytes": 658802
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/1acafa978adeaec8bfcf/gale/core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/015-classes.jar",
+      "sha256": "76a56e02a11d93fb7c74c15d9ca9284fc64ef0702b88d1b20143d73815ccb789",
+      "bytes": 7169455
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/34c0071f90095ef07887/zarr4s/core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/016-classes.jar",
+      "sha256": "33b3d578aaf70e4c3ae8cb65de73b0382e5694abb2a58e29f6e8816573ee8921",
+      "bytes": 3707961
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-spaces/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/017-classes.jar",
+      "sha256": "f007dc71776c9f296f098aa4a37518d5b8b0d615d2dc9341aebf55104e533afa",
+      "bytes": 385924
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/135badde2a1fe78cfcb7/intaglio/modules/core/jvm/target/scala-3.3.8/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/018-classes.jar",
+      "sha256": "070619b8ad516bdfe3e123a4ffabfdef2e5da298d561b26d5f5cd9d6707dc926",
+      "bytes": 11929982
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-raster/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/019-classes.jar",
+      "sha256": "41720361860231a119839593a6d4d3c596301cba0829e60731f0ae59cef77458",
+      "bytes": 547471
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-test-fixtures/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/020-classes.jar",
+      "sha256": "4dfd8b4bcab4a950f73490086d6529bddd745e18be7d7e294062fad11d3dfb66",
+      "bytes": 2937825
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-volume/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/021-classes.jar",
+      "sha256": "dae8249b9457f811d7ec5929c519d63511fd7347e776b8d750042ee65ba1aebc",
+      "bytes": 1075167
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-spatial/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/022-classes.jar",
+      "sha256": "88df1ec3664a140a6a423da98bd7ef88a3083c6cf0215500ef3955fb33e3b829",
+      "bytes": 546064
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f4cb9818d80063022be6/reframe4s/modules/reframe4s-field/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/023-classes.jar",
+      "sha256": "369cc2dfedd6e862de8ff577f5a92021287d36cd25f6bebeb634ae2b870836b2",
+      "bytes": 1110929
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f4cb9818d80063022be6/reframe4s/modules/reframe4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/024-classes.jar",
+      "sha256": "bcbc53ee14a797837616d99d3f7ab502b5fa4af6099876b98dccfd584c60b935",
+      "bytes": 865834
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f4cb9818d80063022be6/reframe4s/modules/reframe4s-resample/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/025-classes.jar",
+      "sha256": "096fbdc3dc1e52db1ffeec89e255beaf96f5b986327d0f65025820ac5d8050a0",
+      "bytes": 616912
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/026-classes.jar",
+      "sha256": "4fb8db2ba79e0937201fdf4ebaf6280279063f2f2b22cb1c1ccdfa04c0542c01",
+      "bytes": 1581609
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/03b7f0d36fcba51e6ed8/ravel/modules/core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/027-classes.jar",
+      "sha256": "1b8fb6c383292410b67a04cc3993fca20ad560e389d72ad0e2de2ff959e8d051",
+      "bytes": 3188320
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/03b7f0d36fcba51e6ed8/ravel/modules/packed/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/028-classes.jar",
+      "sha256": "ad9d01cdf735a041343ce9add61f76411c1463c5bcef74c8ad1a70333308f041",
+      "bytes": 192503
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f4cb9818d80063022be6/reframe4s/modules/reframe4s-lie/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/029-classes.jar",
+      "sha256": "fa2cd8c680963c43e53e86dc17407dc45bd1a04f15db675ac27c384efc720d75",
+      "bytes": 182012
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-nifti/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/030-classes.jar",
+      "sha256": "e41849a46907949bf9d4da17bcd01ba795124301bfeb11aa1b8935b55514c895",
+      "bytes": 1621457
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/031-classes.jar",
+      "sha256": "361ea200b3399109fe21a3aa58ed309b5171b564b617f8dec41239a795418c55",
+      "bytes": 4187432
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-locus/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/032-classes.jar",
+      "sha256": "b6f531d4a1bf8aa4d597fa51c2ac016992a0754f483a0244323112a2edd70a31",
+      "bytes": 893683
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-filter/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/033-classes.jar",
+      "sha256": "10b7964df327482e1bf38b340f8b7c73dc71d9b7b1d6d9259d73930baef4b67f",
+      "bytes": 303703
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-ops-core/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/034-classes.jar",
+      "sha256": "3579249ed0e894bf11776851867fb8ffc2dbd43b42bcf9569a436601a65ebdf1",
+      "bytes": 370953
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/03b7f0d36fcba51e6ed8/ravel/modules/stencil/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/035-classes.jar",
+      "sha256": "1b7ed6579a0d5a42385bf61862776aaad08d87f3031fcc0146b51599dfb36610",
+      "bytes": 195345
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-io/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/036-classes.jar",
+      "sha256": "b637625dd54cb0788df96fb07608c5595b299b156fb0061f0c85fa7d6efa8283",
+      "bytes": 172624
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-volume/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/037-classes.jar",
+      "sha256": "191b90c0615cc83782403b341606945638236df74d3f959ed07b2acb6c2a00e6",
+      "bytes": 116428
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-spatial-io/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/038-classes.jar",
+      "sha256": "a53945b1edd10783ea01d9da2a469d0c52e9e0d2faa5f60b557b0d99824d782d",
+      "bytes": 13070
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-volume-io/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/039-classes.jar",
+      "sha256": "9b6c1732b40ac537e365698a01242a8075fac0a00c8ab78b46ba70b8a5fa0cbc",
+      "bytes": 17417
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-io/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/040-classes.jar",
+      "sha256": "96cfbbf1f816f09239b9391455712063e04ec1bc03ef3f3e8c12b3b65d0da1a8",
+      "bytes": 127114
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.7.4/scala3-library_3-3.7.4.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/041-scala3-library_3-3.7.4.jar",
+      "sha256": "73089d33f763b94758170e0a66be978f9397c14b7795e343898aa89b3d7b6639",
+      "bytes": 1277321
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit_3/1.2.1/munit_3-1.2.1.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/042-munit_3-1.2.1.jar",
+      "sha256": "19d09014eaf69ca8abd8d9e0c43be4c2e5d7c693bc1c6cf3a1c93697ad8bca50",
+      "bytes": 263577
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/043-scala-library-2.13.16.jar",
+      "sha256": "1ebb2b6f9e4eb4022497c19b1e1e825019c08514f962aaac197145f88ed730f1",
+      "bytes": 5926340
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/junit-interface/1.2.1/junit-interface-1.2.1.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/044-junit-interface-1.2.1.jar",
+      "sha256": "66a48070e1fa9bda5aa7142ff8b6638c4a9555d1d760965241b7f4617ce758b9",
+      "bytes": 49858
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scalameta/munit-diff_3/1.2.1/munit-diff_3-1.2.1.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/045-munit-diff_3-1.2.1.jar",
+      "sha256": "10506a15c369f8b66f5347e6fc0ed284f801a07598d9a835b2c8bc6052c3deaf",
+      "bytes": 82505
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/junit/junit/4.13.2/junit-4.13.2.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/046-junit-4.13.2.jar",
+      "sha256": "8e495b634469d64fb8acfa3495a065cbacc8a0fff55ce1e31007be4c16dc57d3",
+      "bytes": 384581
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.4.0/scala-xml_3-2.4.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/047-scala-xml_3-2.4.0.jar",
+      "sha256": "b53971b771240b24161890e4083064ff23bc2f4800a013c9618bf46d2234177f",
+      "bytes": 748415
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/test-interface/1.0/test-interface-1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/048-test-interface-1.0.jar",
+      "sha256": "15f70b38bb95f3002fec9aea54030f19bb4ecfbad64c67424b5e5fea09cd749e",
+      "bytes": 14755
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/049-hamcrest-core-1.3.jar",
+      "sha256": "66fdef91e9739348df7a096aa384a5685f4e875584cce89386a7a47251c4d8e9",
+      "bytes": 45024
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/upickle_3/4.1.0/upickle_3-4.1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/050-upickle_3-4.1.0.jar",
+      "sha256": "36d3566e73726a6922ae816cea6b924f42044e8e6637343a0095883d023d97f8",
+      "bytes": 106696
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.13.0/cats-core_3-2.13.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/051-cats-core_3-2.13.0.jar",
+      "sha256": "e2abfcdfe041ce08d8407412b09d55eb33eb85655c22c9c8815712d3aad633c6",
+      "bytes": 7123338
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire_3/0.18.0/spire_3-0.18.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/052-spire_3-0.18.0.jar",
+      "sha256": "755e6bca07ff0ddde6b2cbb984fe1178389a44887d5aaf610a1402e9fcfe99ac",
+      "bytes": 5303867
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-collections-core_3/0.9.10/cats-collections-core_3-0.9.10.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/053-cats-collections-core_3-0.9.10.jar",
+      "sha256": "9db07413c4f133f1a0deb80582a515b4a94bfb4bc1c3f7026b15518b5dd2deed",
+      "bytes": 639295
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/ujson_3/4.1.0/ujson_3-4.1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/054-ujson_3-4.1.0.jar",
+      "sha256": "6a6fc2c9c8643cedb0ebd02e957b4c50dc09d1aef6573ca1e15a8a424c4fa535",
+      "bytes": 265322
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/upack_3/4.1.0/upack_3-4.1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/055-upack_3-4.1.0.jar",
+      "sha256": "94901d8f63d6c80b332bbf78248a1fbc08c4ca293598d093716e1eaa4e181c42",
+      "bytes": 141817
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/upickle-implicits_3/4.1.0/upickle-implicits_3-4.1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/056-upickle-implicits_3-4.1.0.jar",
+      "sha256": "faff41c45f65807ba0e285d96cc342680a1f47857ee83770c852c9b9a60c34a4",
+      "bytes": 332331
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.13.0/cats-kernel_3-2.13.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/057-cats-kernel_3-2.13.0.jar",
+      "sha256": "a6afaad274e2a0fbbd189bfe3a0e91810bd562745573995011943427ea489040",
+      "bytes": 1592447
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-macros_3/0.18.0/spire-macros_3-0.18.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/058-spire-macros_3-0.18.0.jar",
+      "sha256": "65f223a3ccba177f96c999f0287527b18557eb14f92b7bda88d162c5d0696db8",
+      "bytes": 25936
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-platform_3/0.18.0/spire-platform_3-0.18.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/059-spire-platform_3-0.18.0.jar",
+      "sha256": "8b1dd10891b95e0e2cf2e375972fe0ee0fd231c31b150e352a6940d2bec89652",
+      "bytes": 2289
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/spire-util_3/0.18.0/spire-util_3-0.18.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/060-spire-util_3-0.18.0.jar",
+      "sha256": "de87255aa776a57ac105561e24673bde83a3d9980048582ab763be4e682ca42d",
+      "bytes": 19196
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_3/2.13.0/algebra_3-2.13.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/061-algebra_3-2.13.0.jar",
+      "sha256": "c2751d6b6b02650e56065b6b5affc116de186f9c8e47519d5bc58728991fce41",
+      "bytes": 859746
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/upickle-core_3/4.1.0/upickle-core_3-4.1.0.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/062-upickle-core_3-4.1.0.jar",
+      "sha256": "3d4dbd23edca088a83d722998472c1c5c27678bd01f13572c36627d7061cf596",
+      "bytes": 353146
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/com/lihaoyi/geny_3/1.1.1/geny_3-1.1.1.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/063-geny_3-1.1.1.jar",
+      "sha256": "39658649f90b631a4fd63187724f16ba8a045e1b10a513528f34517fb2edf98b",
+      "bytes": 102389
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/jvm/target/scala-3.7.4/test-classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/064-test-classes.jar",
+      "sha256": "dce78fc7d523ffed429c4fad87a204e62371fc933d7cf38ede1481d29a9714cb",
+      "bytes": 709707
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/065-classes.jar",
+      "sha256": "7d45234500b78d33710246bbbd3fbed9a554a6a36142c8307eeb337da529d126",
+      "bytes": 1192970
+    },
+    {
+      "source": "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-view-link/jvm/target/scala-3.7.4/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/066-classes.jar",
+      "sha256": "ee66808ef8c44decb807256c3d2908514508f031140d8936884e483ec49927d0",
+      "bytes": 84023
+    },
+    {
+      "source": "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/135badde2a1fe78cfcb7/intaglio/modules/java2d/jvm/target/scala-3.3.8/classes",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/067-classes.jar",
+      "sha256": "3ad62aca07647f9e449a1af06c5eb8f4cf1fb9e37fe4aef7b001f44e86cc201d",
+      "bytes": 482761
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-base/24.0.1/javafx-base-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/068-javafx-base-24.0.1-mac-aarch64.jar",
+      "sha256": "0ea913712b982e24be7fb20d1a90b45dafc38403f49dd9d494d1d0d3b43e8794",
+      "bytes": 747928
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-graphics/24.0.1/javafx-graphics-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/069-javafx-graphics-24.0.1-mac-aarch64.jar",
+      "sha256": "90b9c1c89ebd0d79a8af6951517516828cd08896def96871af015cf0a09cdf53",
+      "bytes": 4975802
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-controls/24.0.1/javafx-controls-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/070-javafx-controls-24.0.1-mac-aarch64.jar",
+      "sha256": "0c90550f1989637741c2f08bfb8c37216c2d55b0a7d047169d60815cc9e44dbf",
+      "bytes": 2604500
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-fxml/24.0.1/javafx-fxml-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/071-javafx-fxml-24.0.1-mac-aarch64.jar",
+      "sha256": "144740516f36debb16d262afa119377894bf2c1bc6c18a73f399487c7a1ced76",
+      "bytes": 126743
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-media/24.0.1/javafx-media-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/072-javafx-media-24.0.1-mac-aarch64.jar",
+      "sha256": "05978759e5c021c4604ae355421e7dd32a4806347e4357efa21ab826752b751d",
+      "bytes": 1622512
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-swing/24.0.1/javafx-swing-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/073-javafx-swing-24.0.1-mac-aarch64.jar",
+      "sha256": "2e97be7df2a2a0a6c31c79fd4c92e7588654165074c434f309366caab9176b27",
+      "bytes": 88135
+    },
+    {
+      "source": "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/openjfx/javafx-web/24.0.1/javafx-web-24.0.1-mac-aarch64.jar",
+      "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/074-javafx-web-24.0.1-mac-aarch64.jar",
+      "sha256": "4e86208bef175107997e7149a9bea44427f32aa34fa39c832f9d296250d9abf7",
+      "bytes": 33914182
+    }
+  ],
+  "compatibility": {
+    "source": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/tangent-component-09/openjfx-24.0.1-affine-atlas-compat.jar",
+    "frozen": "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+    "sha256": "3410cf25be9d1f61f3967f14879cc52fc3bf938e460cacbc6d004d2cf1b21734"
+  },
+  "verified_launcher": {
+    "path": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+    "sha256": "78ea95dba5f8f58bf20942bb9f0a2d21dd12a91e9be1fb2df431f4fbdc0cf9bc"
+  },
+  "module_names": [
+    "javafx.base",
+    "javafx.controls",
+    "javafx.fxml",
+    "javafx.graphics",
+    "javafx.media",
+    "javafx.swing",
+    "javafx.web"
+  ],
+  "limits": "Named JavaFX24.0.1, macOS ARM64, JDK25, ES2, legacy renderer only. No defaultJavaFX21 or affine renderer admission. No Root runtime classes."
+}
