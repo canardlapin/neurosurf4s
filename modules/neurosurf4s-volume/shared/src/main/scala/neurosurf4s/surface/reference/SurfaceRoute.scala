@@ -2,6 +2,7 @@ package neurosurf4s.surface.reference
 
 import image4s.geometry.{Affine, D3}
 import neuroim4s.image.*
+import spatial4s.Xyz
 import neurosurf4s.surface.*
 import scala.util.control.NonFatal
 
@@ -427,14 +428,14 @@ object SurfaceRoute:
     var i = 0
     while i < n do
       val p = surface.mesh.vertex(VertexId.unsafe(i))
-      val world = surface.surfaceToWorld(Vector(p.x, p.y, p.z)).toOption.flatMap(w => WorldPoint.make(w(0), w(1), w(2)).toOption)
+      val world = surface.surfaceToWorld(Vector(p.x, p.y, p.z)).toOption.flatMap(w => Xyz.make(w(0), w(1), w(2)).toOption)
       val outcome = world.fold(PointMapOutcome.OutsideSupport): point =>
         inverter match
           case None => map.forward(point)
           case Some(Right(solver)) => solver.place(point)
           case Some(Left(error)) => PointMapOutcome.Unavailable(error.message)
       outcomes(i) = outcome
-      val at = outcome.placed.orElse(world).getOrElse(WorldPoint.Origin)
+      val at = outcome.placed.orElse(world).getOrElse(Xyz.Zero)
       coordinates(3 * i) = at.x
       coordinates(3 * i + 1) = at.y
       coordinates(3 * i + 2) = at.z

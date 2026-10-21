@@ -70,13 +70,13 @@ lazy val io = crossProject(JSPlatform, JVMPlatform)
 
 lazy val spatial = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Full).in(file("modules/neurosurf4s-spatial"))
-  .dependsOn(core % "compile->compile;test->test")
-  .settings(commonSettings).settings(name := "neurosurf4s-spatial")
+  .dependsOn(core % "compile->compile;test->test", io % "test->compile")
+  .settings(commonSettings).settings(name := "neurosurf4s-spatial", libraryDependencies += "com.lihaoyi" %%% "upickle" % "4.1.0")
   .jvmConfigure(_.dependsOn(ProjectRef(reframe4sBuild, "reframe4s-fieldJVM"), ProjectRef(reframe4sBuild, "reframe4s-lieJVM"), ProjectRef(image4sBuild, "image4s-niftiJVM")))
   .jsConfigure(_.dependsOn(ProjectRef(reframe4sBuild, "reframe4s-fieldJS"), ProjectRef(reframe4sBuild, "reframe4s-lieJS"), ProjectRef(image4sBuild, "image4s-niftiJS")))
   .jsSettings(jsSettings)
 
-lazy val spatialIoJVM = project.in(file("modules/neurosurf4s-spatialIo/jvm"))
+lazy val spatialIoJVM = project.in(file("modules/neurosurf4s-spatial-io/jvm"))
   .dependsOn(spatial.jvm % "compile->compile;test->test", io.jvm % "compile->compile;test->test")
   .settings(commonSettings).settings(name := "neurosurf4s-spatial-io")
 
@@ -88,15 +88,25 @@ lazy val volume = crossProject(JSPlatform, JVMPlatform)
   .jsConfigure(_.dependsOn(ProjectRef(neuroim4sBuild, "coreJS")))
   .jsSettings(jsSettings)
 
-lazy val volumeIoJVM = project.in(file("modules/neurosurf4s-volumeIo/jvm"))
+lazy val volumeIoJVM = project.in(file("modules/neurosurf4s-volume-io/jvm"))
   .dependsOn(volume.jvm % "compile->compile;test->test", io.jvm % "compile->compile;test->test")
   .dependsOn(ProjectRef(neuroim4sBuild, "ioJVM"))
   .settings(commonSettings).settings(name := "neurosurf4s-volume-io")
 
+// Unpublished independent oracle bytes and qualification consumers; production modules never depend on this.
+lazy val fixtures = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-test-fixtures"))
+  .dependsOn(volume, io)
+  .settings(commonSettings).settings(name := "neurosurf4s-test-fixtures", publish / skip := true)
+  .jvmConfigure(_.dependsOn(spatialIoJVM, volumeIoJVM))
+  .jsSettings(jsSettings)
+
 lazy val root = project.in(file("."))
-  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM)
+  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js)
   .settings(name := "neurosurf4s-root", publish / skip := true)
 
 addCommandAlias("neurosurf4sCoreTestAll", ";coreJVM/test;coreJS/test;ioJVM/test;ioJS/test")
 addCommandAlias("neurosurf4sSpatialTestAll", ";spatialJVM/test;spatialJS/test;spatialIoJVM/test")
 addCommandAlias("neurosurf4sVolumeTestAll", ";volumeJVM/test;volumeJS/test;volumeIoJVM/test")
+
+addCommandAlias("neurosurf4sFixtureTestAll", ";fixturesJVM/test;fixturesJS/test")

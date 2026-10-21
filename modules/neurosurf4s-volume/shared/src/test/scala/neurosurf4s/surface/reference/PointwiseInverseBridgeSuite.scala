@@ -1,6 +1,7 @@
 package neurosurf4s.surface.reference
 
 import neuroim4s.image.*
+import spatial4s.Xyz
 import neuroim4s.image.SampleSpaces.{indexToGrid3D, spatialDims}
 import neuroim4s.spaces.WorldSpace
 import neurosurf4s.surface.*
@@ -44,14 +45,14 @@ class PointwiseInverseBridgeSuite extends munit.FunSuite:
   private def inverter(map: DeclaredPointMap, policy: InversePolicy = InversePolicy.Default): PointMapInverter =
     map.map.inverter(policy).fold(e => fail(e.message), identity)
 
-  private def forward(map: DeclaredPointMap, p: WorldPoint): WorldPoint =
+  private def forward(map: DeclaredPointMap, p: Xyz): Xyz =
     map.map.forward(p).placed.getOrElse(fail(s"forward map did not place $p"))
 
-  private def distance(p: WorldPoint, q: WorldPoint): Double =
+  private def distance(p: Xyz, q: Xyz): Double =
     math.sqrt(math.pow(p.x - q.x, 2) + math.pow(p.y - q.y, 2) + math.pow(p.z - q.z, 2))
 
   /** Test-local oracle: fixed-point solve of the declared map to machine precision. */
-  private def solve(map: DeclaredPointMap, y: WorldPoint): WorldPoint =
+  private def solve(map: DeclaredPointMap, y: Xyz): Xyz =
     var x = y
     for _ <- 0 until 200 do
       val f = forward(map, x)

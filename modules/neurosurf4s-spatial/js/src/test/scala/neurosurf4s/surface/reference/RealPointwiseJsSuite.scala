@@ -62,7 +62,7 @@ class RealPointwiseJsSuite extends munit.FunSuite:
     */
   private def oracle(h: String): Array[Double] =
     var dir = js.Dynamic.global.process.cwd().asInstanceOf[String]
-    val relative = "modules/surface-test-fixtures/jvm/src/main/resources/pointmap-real"
+    val relative = "modules/neurosurf4s-test-fixtures/jvm/src/main/resources/pointmap-real"
     while !ReferenceNodeFs.existsSync(s"$dir/$relative") && dir.contains("/") do dir = dir.substring(0, dir.lastIndexOf('/'))
     val manifest = ujson.read(read(s"$dir/$relative/fslr-inverse-oracle-all.json"))
     val entry = manifest("hemispheres")(h)
