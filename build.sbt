@@ -141,8 +141,52 @@ lazy val viewRaster = crossProject(JSPlatform, JVMPlatform)
   .settings(commonSettings).settings(name := "neurosurf4s-view-raster")
   .jsSettings(jsSettings)
 
+lazy val javafxPlatformClassifier: String = {
+  val os = sys.props.getOrElse("os.name", "").toLowerCase
+  val arch = sys.props.getOrElse("os.arch", "").toLowerCase
+  val base = if (os.contains("mac")) "mac" else if (os.contains("win")) "win" else "linux"
+  if (arch.contains("aarch64") && base != "win") base + "-aarch64" else base
+}
+
+lazy val viewJavafxJVM = project.in(file("modules/neurosurf4s-view-javafx/jvm"))
+  .dependsOn(view.jvm, viewRaster.jvm, fixtures.jvm % "test->compile")
+  .settings(commonSettings)
+  .settings(name := "neurosurf4s-view-javafx", Test / fork := true, Test / run / fork := true,
+    libraryDependencies ++= Seq(
+      "org.openjfx" % "javafx-base" % "21.0.5" % Provided classifier javafxPlatformClassifier,
+      "org.openjfx" % "javafx-graphics" % "21.0.5" % Provided classifier javafxPlatformClassifier))
+
+lazy val viewThree = crossProject(JSPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-three"))
+  .dependsOn(view, viewRaster, fixtures % "test->compile")
+  .settings(commonSettings).settings(name := "neurosurf4s-view-three")
+  .jsSettings(jsSettings)
+
+lazy val viewThreeVolume = crossProject(JSPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-three-volume"))
+  .dependsOn(viewThree, viewVolume, fixtures % "test->compile")
+  .settings(commonSettings).settings(name := "neurosurf4s-view-three-volume")
+  .jsSettings(jsSettings)
+
+lazy val viewExamples = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("examples/surface-view"))
+  .dependsOn(viewRaster, viewLink, viewVolume, fixtures, io)
+  .settings(commonSettings).settings(name := "neurosurf4s-examples-surface-view", publish / skip := true,
+    libraryDependencies += "org.scala-lang.modules" %%% "scala-xml" % "2.4.0")
+  .jvmConfigure(_.dependsOn(viewJavafxJVM, spatialIoJVM, volumeIoJVM, ProjectRef(intaglioBuild, "java2dJVM") % "test->compile"))
+  .jvmSettings(Test / run / fork := true,
+    libraryDependencies ++= Seq(
+      "org.openjfx" % "javafx-base" % "21.0.5" classifier javafxPlatformClassifier,
+      "org.openjfx" % "javafx-graphics" % "21.0.5" classifier javafxPlatformClassifier))
+  .jsConfigure(_.dependsOn(viewThree.js, viewThreeVolume.js))
+  .jsSettings(jsSettings)
+
+lazy val surfaceExamplesJVM = project.in(file("examples/surface-jvm"))
+  .dependsOn(volumeIoJVM, spatialIoJVM)
+  .settings(commonSettings).settings(name := "neurosurf4s-examples-surface-jvm", publish / skip := true)
+
 lazy val root = project.in(file("."))
-  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js, view.jvm, view.js, viewLink.jvm, viewLink.js, viewVolume.jvm, viewVolume.js, viewRaster.jvm, viewRaster.js)
+  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js, view.jvm, view.js, viewLink.jvm, viewLink.js, viewVolume.jvm, viewVolume.js, viewRaster.jvm, viewRaster.js, viewJavafxJVM, viewThree.js, viewThreeVolume.js, viewExamples.jvm, viewExamples.js, surfaceExamplesJVM)
   .settings(name := "neurosurf4s-root", publish / skip := true)
 
 addCommandAlias("neurosurf4sCoreTestAll", ";coreJVM/test;coreJS/test;ioJVM/test;ioJS/test")
@@ -152,3 +196,5 @@ addCommandAlias("neurosurf4sVolumeTestAll", ";volumeJVM/test;volumeJS/test;volum
 addCommandAlias("neurosurf4sFixtureTestAll", ";fixturesJVM/test;fixturesJS/test")
 
 addCommandAlias("neurosurf4sViewTestAll", ";viewJVM/test;viewJS/test;viewLinkJVM/test;viewLinkJS/test;viewVolumeJVM/test;viewVolumeJS/test;viewRasterJVM/test;viewRasterJS/test")
+
+addCommandAlias("neurosurf4sBackendTestAll", ";viewJavafxJVM/test;viewThreeJS/test;viewThreeVolumeJS/test;viewExamplesJVM/test;viewExamplesJS/test;surfaceExamplesJVM/test")
