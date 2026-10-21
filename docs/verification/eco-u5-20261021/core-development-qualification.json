@@ -1,0 +1,202 @@
+{
+  "schema_version": 1,
+  "source_revision": "a8ae59c3b300bd99ab28bb03691f1cb20ed648cc",
+  "gate06": {
+    "core_jvm_passed": 156,
+    "core_js_passed": 153,
+    "io_jvm_passed": 73,
+    "io_js_passed": 37,
+    "total_passed": 419,
+    "skipped": 0,
+    "failed": 0
+  },
+  "review": {
+    "reviewer": "volume_view_astra_review",
+    "verdict": "APPROVE production seams relative to frozen Root18c7b772",
+    "source_revision": "a8ae59c3b300bd99ab28bb03691f1cb20ed648cc",
+    "qualification_boundary": "Inspect resolved core/IO production classpath under coherent published pins before acceptance; API Point3D.fromVector is checked Either and consumers must migrate."
+  },
+  "limits": "Development overrides only. Optional transport/volume qualification and Root cutover remain pending. Earlier load/compile/test witness failures retained; no lowered tolerances or weakened admission.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-core-01.log.gz",
+      "raw_sha256": "8ca721ccf9743299a045de77f121f63fe612735b0dd1814ae56aa128a2dcaaf0",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:35:40.672928+00:00",
+        "finished_utc": "2026-10-21T17:35:59.808276+00:00",
+        "duration_seconds": 19.134947,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-01.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 1651
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-core-02.log.gz",
+      "raw_sha256": "1720b10c4f0e1932f6f0a2dbeb93e31960d9b60a4ebf0a3a9d8f7d18059cbdd6",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:36:27.124946+00:00",
+        "finished_utc": "2026-10-21T17:42:40.259506+00:00",
+        "duration_seconds": 373.130773,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-02.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 20661
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-core-03.log.gz",
+      "raw_sha256": "19c66520188ba4b5388a9c43354330797ce2dffaddd2b07b0d792ee78be6b1b9",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:43:13.425123+00:00",
+        "finished_utc": "2026-10-21T17:43:52.506593+00:00",
+        "duration_seconds": 39.075848,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-03.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 1148
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-core-04.log.gz",
+      "raw_sha256": "99f3d2746defd54624f00f979779495500e01f3446c95d97f276ea46c1c3a3bf",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:44:19.863694+00:00",
+        "finished_utc": "2026-10-21T17:45:12.975574+00:00",
+        "duration_seconds": 53.110966,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-04.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 14262
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-core-05.log.gz",
+      "raw_sha256": "bc3bb0d418bab6af7d350ea4fbb092183b4a080c12a4ee369118cfc9333d8d1c",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:46:26.843016+00:00",
+        "finished_utc": "2026-10-21T17:46:50.110933+00:00",
+        "duration_seconds": 23.267487,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-05.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 16146
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-core-06.log.gz",
+      "raw_sha256": "84032fae907410390179e6e4d867708f4705faf6f5ed8c74de5314a7a5a1363e",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T17:47:59.454759+00:00",
+        "finished_utc": "2026-10-21T17:53:20.141193+00:00",
+        "duration_seconds": 320.683239,
+        "command": [
+          "env",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "JAVA_TOOL_OPTIONS=-Dneurosurf4s.spatial4s.build=/Users/bbuchsbaum/code/scala/spatial4s-eco-u5-xyz-qualification-20261021 -Dneurosurf4s.neuroim4s.build=/Users/bbuchsbaum/code/scala/neuroim4s-eco-u5-20261021",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-core-06.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 27878
+      }
+    }
+  ]
+}
