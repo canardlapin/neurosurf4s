@@ -10,7 +10,7 @@ Build Scala.js first, then point the runner at the generated module (the module
 must expose `mountScalafimSurfaceParityBaseline`):
 
 ```sh
-python3 tools/build/sbt-warm surfaceViewExamplesJS/fastLinkJS
+sbt viewExamplesJS/fastLinkJS
 node tools/surface-view/parity/run-parity.mjs \
   --angle metal --native-probes \
   --scalafim-module /absolute/path/to/examples-surface-view-fastopt/main.js \
@@ -93,8 +93,8 @@ vendoring or redistribution remains out of scope until a documented decision.
 Build and capture through the production JavaFX host before the browser run:
 
 ```sh
-python3 tools/build/sbt-warm \
-  'surfaceViewExamplesJVM/Test/runMain scalafim.examples.surfaceview.SurfaceParityJvm /private/tmp/surfview-parity-artifacts'
+sbt \
+  'viewExamplesJVM/Test/runMain neurosurf4s.examples.surfaceview.SurfaceParityJvm /private/tmp/surfview-parity-artifacts'
 ```
 
 The adapter opens a temporary JavaFX stage, captures its actual SubScene and a

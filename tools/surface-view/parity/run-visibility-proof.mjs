@@ -24,7 +24,7 @@ const provenance={purpose:'16 bounded analytic P4 specimens; not frozen cortex m
   candidateCommit:command('git',['rev-parse','HEAD'],repo),referenceCommit:command('git',['rev-parse','HEAD'],reference),
   candidateTrackedDiffSha256:sha(command('git',['diff','--binary','HEAD','--','modules','build.sbt'],repo)),
   moduleSha256:sha(await readFile(modulePath)),runnerSha256:sha(await readFile(fileURLToPath(import.meta.url))),
-  fixtureSha256:sha(await readFile(resolve(repo,'modules/surface-view/shared/src/main/scala/scalafim/surface/view/SurfaceVisibilityFixture.scala'))),
+  fixtureSha256:sha(await readFile(resolve(repo,'modules/neurosurf4s-view/shared/src/main/scala/neurosurf4s/surface/view/SurfaceVisibilityFixture.scala'))),
   referenceAdapterSha256:sha(await readFile(resolve(here,'reference-view.mjs'))),startedAt:new Date().toISOString()};
 if(command('git',['status','--porcelain','--','src','package.json','package-lock.json'],reference))throw new Error('reference source dirty');
 const {PNG}=(await import(pathToFileURL(resolve(reference,'node_modules/playwright-core/lib/utilsBundle.js')))).default;

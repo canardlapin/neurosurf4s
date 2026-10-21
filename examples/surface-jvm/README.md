@@ -19,13 +19,13 @@ sbt surfaceExamplesJVM/test
 Inspect bundled FreeSurfer and GIFTI geometry:
 
 ```sh
-sbt "surfaceExamplesJVM/runMain scalafim.examples.surface.inspectExampleSurfaces"
+sbt "surfaceExamplesJVM/runMain neurosurf4s.examples.surface.inspectExampleSurfaces"
 ```
 
 Run the labeled-surface parcel workflow:
 
 ```sh
-sbt "surfaceExamplesJVM/runMain scalafim.examples.surface.summarizeSurfaceParcels"
+sbt "surfaceExamplesJVM/runMain neurosurf4s.examples.surface.summarizeSurfaceParcels"
 ```
 
 The example project bundles tiny text fixtures under `src/main/resources` so the

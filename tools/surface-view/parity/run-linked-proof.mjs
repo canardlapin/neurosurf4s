@@ -21,7 +21,7 @@ const {PNG}=(await import(pathToFileURL(resolve(reference,'node_modules/playwrig
 const decode=url=>PNG.sync.read(Buffer.from(url.split(',')[1],'base64'));
 await mkdir(out,{recursive:true});await json(resolve(out,'guard-before.json'),audit());
 const provenance={moduleSha256:sha(await readFile(modulePath)),referenceBundleSha256:sha(await readFile(bundle)),
- runnerSha256:sha(await readFile(fileURLToPath(import.meta.url))),fixtureSha256:sha(await readFile(resolve(repo,'modules/surface-view/shared/src/main/scala/scalafim/surface/view/SurfaceLinkedFixture.scala'))),startedAt:new Date().toISOString()};
+ runnerSha256:sha(await readFile(fileURLToPath(import.meta.url))),fixtureSha256:sha(await readFile(resolve(repo,'modules/neurosurf4s-view/shared/src/main/scala/neurosurf4s/surface/view/SurfaceLinkedFixture.scala'))),startedAt:new Date().toISOString()};
 let server,browser,context;
 try{
  const {createServer}=await import(pathToFileURL(resolve(reference,'node_modules/vite/dist/node/index.js')));

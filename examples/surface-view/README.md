@@ -9,21 +9,21 @@ The portable semantic receipt is pinned by the shared test and therefore runs
 on both platforms:
 
 ```sh
-sbt surfaceViewExamplesJVM/test surfaceViewExamplesJS/test
-sbt "surfaceViewExamplesJVM/runMain scalafim.examples.surfaceview.SurfaceViewerReceiptExample"
+sbt viewExamplesJVM/test viewExamplesJS/test
+sbt "viewExamplesJVM/runMain neurosurf4s.examples.surfaceview.SurfaceViewerReceiptExample"
 ```
 
 Launch the JVM application with:
 
 ```sh
-sbt "surfaceViewExamplesJVM/runMain scalafim.examples.surfaceview.JavaFxSurfaceViewerExample"
+sbt "viewExamplesJVM/runMain neurosurf4s.examples.surfaceview.JavaFxSurfaceViewerExample"
 ```
 
 For the browser example, link the classic script, serve `~/code`, and open
 `http://127.0.0.1:8000/scala/scalafim/examples/surface-view/browser/`:
 
 ```sh
-sbt surfaceViewExamplesJS/fastLinkJS
+sbt viewExamplesJS/fastLinkJS
 cd ~/code && python -m http.server 8000 --bind 127.0.0.1
 ```
 
@@ -55,8 +55,8 @@ have not yet been established. By default it reads the checksum-pinned files in
 directory argument to use an equivalent corpus.
 
 ```sh
-sbt "surfaceViewExamplesJVM/Test/runMain scalafim.surface.view.javafx.JavaFxCorticalAcceptanceProbe"
-sbt surfaceViewExamplesJS/fastLinkJS
+sbt "viewExamplesJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxCorticalAcceptanceProbe"
+sbt viewExamplesJS/fastLinkJS
 cd ~/code && python -m http.server 8000 --bind 127.0.0.1
 # open http://127.0.0.1:8000/scala/scalafim/examples/surface-view/browser/cortical.html
 ```

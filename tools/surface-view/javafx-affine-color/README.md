@@ -10,7 +10,7 @@ geometry and opaque vertex colors. It does not read native atlas UVs, tiles,
 midpoint weights or the reference surface rasterizer. `plan.json` fixes the
 fixtures, controls and two-channel-level budget before the recorded runs.
 
-The Scala test main `scalafim.surface.view.javafx.JavaFxAffineColorProbe` writes
+The Scala test main `neurosurf4s.surface.view.javafx.JavaFxAffineColorProbe` writes
 48 PNG/binary pairs for one encoding: diagonal and RGB triangles, two dense
 ramps, front/oblique geometry, original/cyclic/shuffled faces, and AA off/on.
 The binary stores original positions, colors, indices and outer boundary.
@@ -19,7 +19,7 @@ atlas lowering from application camera fitting. No Stage is shown.
 
 ## Generate fixtures
 
-Compile `surfaceViewJavafxJVM/Test/compile`. The historical qualification used
+Compile `viewJavafxJVM/Test/compile`. The historical qualification used
 exact Intaglio `55658abfbbfed0c9a36ab612b38bd8f0677bc158` via the existing
 `scalafim.intaglio.build` override because its then-current default pin was
 incoherent with existing surface APIs. The recovery uses the current build's
@@ -39,7 +39,7 @@ java --module-path "$SCALAFIM_FX24_MODULES" \
   -Dprism.order=es2 \
   "-Dprobe.expectedOrigin=$SCALAFIM_FX24_COMPAT_URL" \
   -cp "$SCALAFIM_TEST_CLASSPATH" \
-  scalafim.surface.view.javafx.JavaFxAffineColorProbe \
+  neurosurf4s.surface.view.javafx.JavaFxAffineColorProbe \
   /tmp/affine-color/AdaptiveAffineOpaque-patched AdaptiveAffineOpaque
 ```
 
