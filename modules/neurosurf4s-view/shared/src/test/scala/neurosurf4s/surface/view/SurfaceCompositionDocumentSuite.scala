@@ -1,6 +1,7 @@
 package neurosurf4s.surface.view
 
 import neuroim4s.spaces.Spaces
+import neurosurf4s.surface.SurfaceKind
 
 class SurfaceCompositionDocumentSuite extends munit.FunSuite:
   private def ok[E, A](value: Either[E, A]): A = value.fold(error => fail(s"$error"), identity)
@@ -78,3 +79,24 @@ class SurfaceCompositionDocumentSuite extends munit.FunSuite:
     assert(json.contains("\"revision\":9"))
     val conflicting = json.replaceFirst("\"from\":\"[^\"]+\"", "\"from\":\"white\"")
     assert(SurfaceCompositionCodec.decode(conflicting).isLeft)
+
+  test("linked temporal morph replays with complete geometry references and refuses missing or changed variants"):
+    val fixture = SurfaceLinkedFixture
+    val model = fixture.model(fixture.playback(.5))
+    val state = fixture.state(model, selected = 2, morph = .4)
+    val navigation = fixture.navigation(model, state)
+    val document = ok(SurfaceCompositionDocument.capture(model, state, navigation, fixture.Bindings, fixture.Provenance))
+    val decoded = ok(SurfaceCompositionCodec.decode(SurfaceCompositionCodec.encode(document)))
+    val display = ok(SurfaceDisplayFrame.declare(model, fixture.Surface, fixture.Frame))
+    val restored = ok(decoded.restore(model, fixture.Bindings, Map(fixture.Surface -> display)))
+    assertEquals(restored.presentation.geometryPresentations, state.geometryPresentations)
+    assertEquals(restored.navigation.views.map(_.pose), navigation.views.map(_.pose))
+    val before = fixture.composition(model, state)
+    val after = ok(SurfaceCompositionCompiler.compile(model, restored.presentation, restored.navigation.views))
+    assertEquals(after.receipt, before.receipt)
+    val missing = fixture.Bindings.copy(geometries = Map(fixture.Surface -> Map(SurfaceKind.Pial -> fixture.Reference)))
+    assert(SurfaceCompositionDocument.capture(model, state, navigation, missing, fixture.Provenance).isLeft)
+    assert(decoded.restore(model, missing, Map(fixture.Surface -> display)).isLeft)
+    val changed = fixture.Bindings.copy(geometries = Map(fixture.Surface -> Map(
+      SurfaceKind.Pial -> fixture.Reference, SurfaceKind.Inflated -> fixture.Reference)))
+    assert(decoded.restore(model, changed, Map(fixture.Surface -> display)).isLeft)

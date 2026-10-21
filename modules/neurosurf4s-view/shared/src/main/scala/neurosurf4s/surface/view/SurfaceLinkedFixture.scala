@@ -28,7 +28,11 @@ object SurfaceLinkedFixture:
   val Mapping = ScalarMapping(ScalarScale.sequential(DisplayWindow.unsafe(-1, 1),
     ScalarRamp.linear(Rgba32.unsafe(0, 32, 255), Rgba32.unsafe(255, 96, 0))))
   val Reference = SurfaceExternalReference(SurfaceAssetUri.unsafe("fixture://linked-series-v1"), SurfaceContentDigest.unsafe("e" * 64))
-  val Bindings = SurfaceSceneBindings(Map(Surface -> Reference), Map(Layer -> Reference))
+  // Synthetic references are fixture identities, not evidence for external anatomical assets.
+  val ExpandedReference = SurfaceExternalReference(SurfaceAssetUri.unsafe("fixture://linked-inflated-v1"),
+    SurfaceContentDigest.unsafe("f" * 64))
+  val Bindings = SurfaceSceneBindings(Map(Surface -> Reference), Map(Layer -> Reference),
+    Map(Surface -> Map(SurfaceKind.Pial -> Reference, SurfaceKind.Inflated -> ExpandedReference)))
   val Provenance = ok(SurfaceProvenance.make("linked-display-probe", "1", "2026-10-14"))
   val Legend = SurfaceLegendRequest.Continuous(SurfaceLegendLayers.one(Layer), ok(LegendTitle.make("Synthetic effect")),
     showHidden = false, showInvalid = false)
