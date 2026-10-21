@@ -7,19 +7,19 @@ import neurosurf4s.surface.fixtures.SurfaceTestFixtures
 
 class SurfaceCoreSuite extends munit.FunSuite:
 
-  test("Point3D is a surface alias for provider Xyz"):
-    val point: Xyz = Point3D(1.0, 2.0, 3.0)
-    val surfacePoint: Point3D = Xyz(1.0, 2.0, 3.0)
+  test("Xyz is a surface alias for provider Xyz"):
+    val point: Xyz = Xyz(1.0, 2.0, 3.0)
+    val surfacePoint: Xyz = Xyz(1.0, 2.0, 3.0)
 
     assertEquals(point, surfacePoint)
-    assertEquals(Point3D.fromVector(Vector(1.0, 2.0, 3.0)).toOption.get, point)
+    assertEquals(Xyz.fromVector(Vector(1.0, 2.0, 3.0)).toOption.get, point)
 
   test("TriangleMesh builds a valid tetrahedron"):
     val mesh = SurfaceTestFixtures.tetraMesh
 
     assertEquals(mesh.vertexCount, 4)
     assertEquals(mesh.faceCount, 4)
-    assertEquals(mesh.vertex(VertexId(2)), Point3D(0.0, 1.0, 0.0))
+    assertEquals(mesh.vertex(VertexId(2)), Xyz(0.0, 1.0, 0.0))
     assertEquals(mesh.face(FaceId(0)), Triangle(VertexId(0), VertexId(1), VertexId(2)))
 
   test("mesh topology identity ignores coordinates but preserves exact face ordering"):

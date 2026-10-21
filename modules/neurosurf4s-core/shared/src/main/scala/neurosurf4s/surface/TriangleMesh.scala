@@ -1,5 +1,7 @@
 package neurosurf4s.surface
 
+import spatial4s.Xyz
+
 import mesh4s.{Triangle as MeshTriangle, TriangleTopology, TopologyAudit, TopologyIssue}
 import mesh4s.geometry.{PointField, PointFieldError}
 import spatial4s.{CoordinateConvention, CoordinateQuantity, CoordinateUnit, D3, Frame}
@@ -89,11 +91,11 @@ final class TriangleMesh private (
     else if !hasSameTopology(owner) then Left(MeshAdmissionError.Shape("ordered triangle topology differs"))
     else TriangleMesh.on(owner.topology, coordinates.toArray)
 
-  def vertex(id: VertexId): Point3D =
+  def vertex(id: VertexId): Xyz =
     val i = id.index
     require(i < vertexCount, "vertex id out of range")
     val off = i * 3
-    Point3D(coordinates(off), coordinates(off + 1), coordinates(off + 2))
+    Xyz(coordinates(off), coordinates(off + 1), coordinates(off + 2))
 
   def face(id: FaceId): Triangle =
     val i = id.index
@@ -101,7 +103,7 @@ final class TriangleMesh private (
     val off = i * 3
     Triangle(VertexId.unsafe(faceIndices(off)), VertexId.unsafe(faceIndices(off + 1)), VertexId.unsafe(faceIndices(off + 2)))
 
-  def vertices: Vector[Point3D] = Vector.tabulate(vertexCount)(i => vertex(VertexId.unsafe(i)))
+  def vertices: Vector[Xyz] = Vector.tabulate(vertexCount)(i => vertex(VertexId.unsafe(i)))
   def faces: Vector[Triangle] = Vector.tabulate(faceCount)(i => face(FaceId.unsafe(i)))
 
 object TriangleMesh:

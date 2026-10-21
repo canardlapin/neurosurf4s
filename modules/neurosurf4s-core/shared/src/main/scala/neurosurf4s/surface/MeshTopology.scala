@@ -1,5 +1,7 @@
 package neurosurf4s.surface
 
+import spatial4s.Xyz
+
 import cats.Hash
 import graph4s.{Graph, Link}
 import graph4s.data.{EdgeField, WeightedGraph}
@@ -37,7 +39,7 @@ final case class MeshTopology private (
     val owner: realization.topology.type = realization.topology
     owner.edges.indices.map: edge =>
       // edgeVector retains the old finite-difference admission; squared norms
-      // may still overflow, as they did through Point3D.norm.
+      // may still overflow, as they did through Xyz.norm.
       try realization.edgeVector(edge)
       catch case _: IllegalStateException =>
         throw new IllegalArgumentException("requirement failed: spatial point coordinates must be finite")
@@ -111,8 +113,8 @@ final case class MeshTopology private (
   def eulerCharacteristic: Int =
     mesh.vertexCount - edgeCount + mesh.faceCount
 
-  def vertexNormals: Vector[Point3D] =
-    val sums = Array.fill(mesh.vertexCount)(Point3D.Zero)
+  def vertexNormals: Vector[Xyz] =
+    val sums = Array.fill(mesh.vertexCount)(Xyz.Zero)
 
     var i = 0
     while i < mesh.faceCount do

@@ -1,5 +1,7 @@
 package neurosurf4s.surface
 
+import spatial4s.Xyz
+
 import locus4s.data.VectorField
 import mesh4s.graph4s.MeshShortestPaths
 import mesh4s.geometry.SphereGeometry
@@ -178,7 +180,7 @@ object SurfaceGeodesics:
     targets: Vector[VertexId],
     row: Int,
     out: Array[Double],
-    distance: (Point3D, Point3D) => Double
+    distance: (Xyz, Xyz) => Double
   ): Unit =
     val srcPoint = topology.mesh.vertex(source)
     var col = 0
@@ -186,7 +188,7 @@ object SurfaceGeodesics:
       out(row * targets.length + col) = distance(srcPoint, topology.mesh.vertex(targets(col)))
       col += 1
 
-  private def euclideanDistance(a: Point3D, b: Point3D): Double =
+  private def euclideanDistance(a: Xyz, b: Xyz): Double =
     (a - b).norm
 
   private def fillSpherical(

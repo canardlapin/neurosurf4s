@@ -1,5 +1,7 @@
 package neurosurf4s.surface
 
+import spatial4s.Xyz
+
 import scala.util.control.NonFatal
 
 enum FragmentedParcelPolicy:
@@ -179,7 +181,7 @@ object SurfaceParcels:
     val centroid =
       parcel.vertices
         .map(topology.mesh.vertex)
-        .foldLeft(Point3D.Zero)(_ + _) * (1.0 / parcel.vertices.length.toDouble)
+        .foldLeft(Xyz.Zero)(_ + _) * (1.0 / parcel.vertices.length.toDouble)
 
     parcel.vertices.minBy { vertex =>
       val distance = (topology.mesh.vertex(vertex) - centroid).norm
