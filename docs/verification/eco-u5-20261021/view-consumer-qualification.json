@@ -1,0 +1,39 @@
+{
+  "provider_source_revision": "48e39c20a3e015575a7f4503d567f73eed4df4f8",
+  "provider_kind": "Normal clean clone; published transitive immutable pins, no overrides",
+  "client_revision": "a2ac3b7e88b4ef93302509bb1b33cf9bb1b7c285",
+  "passed": 2,
+  "nonempty_tasks": 2,
+  "source_archive": "view-consumer-source.tar.gz",
+  "contracts": "Public scalar field->scene->CPU image, independent1175covered-pixel oracle and grayscale128 sample, original vertex/face pick+barycentrics, selected scalar readout and backend observation admission on JVM+JS.",
+  "log": {
+    "path": "neurosurf4s-eco-u5-view-consumer-21.log.gz",
+    "raw_sha256": "4d4ba79d89e5c7ac0ba2adbd43fbf49251f06496cf10f2244773482e74bc8a7c",
+    "metadata": {
+      "schema_version": 1,
+      "started_utc": "2026-10-21T18:37:30.055661+00:00",
+      "finished_utc": "2026-10-21T18:40:08.837445+00:00",
+      "duration_seconds": 158.781265,
+      "command": [
+        "env",
+        "-u",
+        "JAVA_TOOL_OPTIONS",
+        "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+        "SBT_WARM_HEAP=6g",
+        "python3",
+        "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+        "consumerJVM/test",
+        "consumerJS/test"
+      ],
+      "cwd": "/private/var/folders/9h/nkjq6vss7mqdl4ck7q1hd8ph0000gp/T/neurosurf4s-view-consumer-gxab005c",
+      "log": "/tmp/neurosurf4s-eco-u5-view-consumer-21.log",
+      "exit_code": 0,
+      "child_returncode": 0,
+      "reason": "exited",
+      "detail": null,
+      "timeout_seconds": 3000.0,
+      "log_bytes": 16875
+    }
+  },
+  "limits": "Portable CPU view/raster only, no native or GPU/browser acceptance."
+}

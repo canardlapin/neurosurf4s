@@ -1,0 +1,213 @@
+{
+  "candidate": "62b81f4",
+  "passed": 185,
+  "nonempty_test_tasks": 6,
+  "skipped": 0,
+  "tasks": [
+    {
+      "task": "viewJavafxJVM/test",
+      "results": {
+        "total": 65,
+        "failed": 0,
+        "errors": 0,
+        "passed": 65
+      },
+      "gate": "22",
+      "exit_code": 0
+    },
+    {
+      "task": "viewThreeJS/test",
+      "results": {
+        "total": 51,
+        "failed": 0,
+        "errors": 0,
+        "passed": 51
+      },
+      "gate": "22",
+      "exit_code": 0
+    },
+    {
+      "task": "viewThreeVolumeJS/test",
+      "results": {
+        "total": 7,
+        "failed": 0,
+        "errors": 0,
+        "passed": 7
+      },
+      "gate": "25",
+      "exit_code": 0
+    },
+    {
+      "task": "viewExamplesJVM/test",
+      "results": {
+        "total": 30,
+        "failed": 0,
+        "errors": 0,
+        "passed": 30
+      },
+      "gate": "25",
+      "exit_code": 0
+    },
+    {
+      "task": "viewExamplesJS/test",
+      "results": {
+        "total": 29,
+        "failed": 0,
+        "errors": 0,
+        "passed": 29
+      },
+      "gate": "25",
+      "exit_code": 0
+    },
+    {
+      "task": "surfaceExamplesJVM/test",
+      "results": {
+        "total": 3,
+        "failed": 0,
+        "errors": 0,
+        "passed": 3
+      },
+      "gate": "25",
+      "exit_code": 0
+    }
+  ],
+  "node_parity_harness": {
+    "passed": 48,
+    "failed": 0,
+    "skipped": 0
+  },
+  "adverse_evidence": [
+    "gate22: private temporary GPU coordinate helper annotation still expected old WorldPoint; corrected annotation to spatial4s.Xyz, arithmetic unchanged.",
+    "gate24: migrated unsupported-policy test placed after browser-export companion; moved into owning suite, assertions unchanged."
+  ],
+  "limits": "Source review, actual native graphical/browser qualification and Root cutover remain pending; no new performance or pixel qualification claim.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-backends-22.log.gz",
+      "raw_sha256": "4b0585921e9e61673fb4d02df5e08acb3a6aa017ef699c3d20fa11bb93474aa2",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:41:23.280498+00:00",
+        "finished_utc": "2026-10-21T18:42:26.230415+00:00",
+        "duration_seconds": 62.949557,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "reload",
+          "viewJavafxJVM/test",
+          "viewThreeJS/test",
+          "viewThreeVolumeJS/test",
+          "viewExamplesJVM/test",
+          "viewExamplesJS/test",
+          "surfaceExamplesJVM/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-backends-22.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3600.0,
+        "log_bytes": 20576
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-parity-node-23.log.gz",
+      "raw_sha256": "457021c627899b770dc54d7ac4f5c5d989fb620ad08fa3532d2901c2d73360ef",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:42:16.471394+00:00",
+        "finished_utc": "2026-10-21T18:42:17.186862+00:00",
+        "duration_seconds": 0.715292,
+        "command": [
+          "node",
+          "--test",
+          "tools/surface-view/parity/compare.test.mjs",
+          "tools/surface-view/parity/fixtures.test.mjs",
+          "tools/surface-view/parity/gallery.test.mjs",
+          "tools/surface-view/parity/matrix.test.mjs",
+          "tools/surface-view/parity/qualification-contracts.test.mjs",
+          "tools/surface-view/parity/qualification-specs.test.mjs",
+          "tools/surface-view/parity/reference-view.test.mjs",
+          "tools/surface-view/parity/resource-contracts.test.mjs",
+          "tools/surface-view/parity/scientific-oracle.test.mjs"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-parity-node-23.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 600.0,
+        "log_bytes": 4190
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-backends-24.log.gz",
+      "raw_sha256": "c5ecf9bc33aacd7bcb10b1feabed1e6fb40a9a4e8e9a86f332618fa25d873c15",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:42:55.077422+00:00",
+        "finished_utc": "2026-10-21T18:42:59.993714+00:00",
+        "duration_seconds": 4.915996,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "viewThreeVolumeJS/test",
+          "viewExamplesJVM/test",
+          "viewExamplesJS/test",
+          "surfaceExamplesJVM/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-backends-24.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3600.0,
+        "log_bytes": 940
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-backends-25.log.gz",
+      "raw_sha256": "4fa3c766b997863d575cb9d059d19808aafcd95caa2208bdde8c9417387ae208",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:44:13.091033+00:00",
+        "finished_utc": "2026-10-21T18:44:47.107135+00:00",
+        "duration_seconds": 34.015953,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "viewThreeVolumeJS/test",
+          "viewExamplesJVM/test",
+          "viewExamplesJS/test",
+          "surfaceExamplesJVM/test"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-backends-25.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3600.0,
+        "log_bytes": 9495
+      }
+    }
+  ]
+}
