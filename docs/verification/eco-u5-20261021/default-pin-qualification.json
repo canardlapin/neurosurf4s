@@ -1,0 +1,370 @@
+{
+  "schema_version": 1,
+  "source_revision": "1006fd33dc5b5d83d9e2187132ea91bd5a2857f8",
+  "override_properties": [],
+  "tasks": [
+    {
+      "task": "coreJVM/test",
+      "results": {
+        "total": 155,
+        "failed": 0,
+        "errors": 0,
+        "passed": 155
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "coreJS/test",
+      "results": {
+        "total": 152,
+        "failed": 0,
+        "errors": 0,
+        "passed": 152
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "ioJVM/test",
+      "results": {
+        "total": 73,
+        "failed": 0,
+        "errors": 0,
+        "passed": 73
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "ioJS/test",
+      "results": {
+        "total": 37,
+        "failed": 0,
+        "errors": 0,
+        "passed": 37
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "spatialJVM/test",
+      "results": {
+        "total": 19,
+        "failed": 0,
+        "errors": 0,
+        "passed": 19
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "spatialJS/test",
+      "results": {
+        "total": 20,
+        "failed": 0,
+        "errors": 0,
+        "passed": 19,
+        "skipped": 1
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "spatialIoJVM/test",
+      "results": null,
+      "exit_code": 0
+    },
+    {
+      "task": "volumeJVM/test",
+      "results": {
+        "total": 82,
+        "failed": 0,
+        "errors": 0,
+        "passed": 82
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "volumeJS/test",
+      "results": {
+        "total": 83,
+        "failed": 0,
+        "errors": 0,
+        "passed": 82,
+        "skipped": 1
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "volumeIoJVM/test",
+      "results": {
+        "total": 5,
+        "failed": 0,
+        "errors": 0,
+        "passed": 5
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "fixturesJVM/test",
+      "results": {
+        "total": 21,
+        "failed": 0,
+        "errors": 0,
+        "passed": 21
+      },
+      "exit_code": 0
+    },
+    {
+      "task": "fixturesJS/test",
+      "results": {
+        "total": 7,
+        "failed": 0,
+        "errors": 0,
+        "passed": 7
+      },
+      "exit_code": 0
+    }
+  ],
+  "passed": 652,
+  "skipped": 2,
+  "nonempty_test_tasks": 11,
+  "compile_only_zero_test_task": "spatialIoJVM/test",
+  "dependency_classpaths": {
+    "coreJVM": [
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/743bbc500a4cc79953a2/spatial4s/modules/spatial4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-data/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-geometry/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-graph4s/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/core/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/indexed/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/algorithms/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/data/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-geometry/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/1acafa978adeaec8bfcf/gale/core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/34c0071f90095ef07887/zarr4s/core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-spaces/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.7.4/scala3-library_3-3.7.4.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.4.0/scala-xml_3-2.4.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.13.0/cats-core_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-collections-core_3/0.9.10/cats-collections-core_3-0.9.10.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.13.0/cats-kernel_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_3/2.13.0/algebra_3-2.13.0.jar"
+    ],
+    "coreJS": [
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/743bbc500a4cc79953a2/spatial4s/modules/spatial4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-data/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-geometry/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-graph4s/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/core/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/indexed/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/algorithms/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/data/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-geometry/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/1acafa978adeaec8bfcf/gale/core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/34c0071f90095ef07887/zarr4s/core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-spaces/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_sjs1_3/3.7.4/scala3-library_sjs1_3-3.7.4.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.22.0/scalajs-library_2.13-1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_sjs1_3/2.4.0/scala-xml_sjs1_3-2.4.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.18/scala-library-2.13.18.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-javalib/1.22.0/scalajs-javalib-1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-scalalib_2.13/2.13.18%2B1.22.0/scalajs-scalalib_2.13-2.13.18%2B1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_sjs1_3/2.13.0/cats-core_sjs1_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-collections-core_sjs1_3/0.9.10/cats-collections-core_sjs1_3-0.9.10.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_sjs1_3/2.13.0/cats-kernel_sjs1_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_sjs1_3/2.13.0/algebra_sjs1_3-2.13.0.jar"
+    ],
+    "ioJS": [
+      "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/743bbc500a4cc79953a2/spatial4s/modules/spatial4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-data/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-geometry/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-graph4s/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/core/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/indexed/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/algorithms/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/data/.js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-geometry/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/1acafa978adeaec8bfcf/gale/core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/34c0071f90095ef07887/zarr4s/core/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-spaces/js/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_sjs1_3/3.7.4/scala3-library_sjs1_3-3.7.4.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-library_2.13/1.22.0/scalajs-library_2.13-1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_sjs1_3/2.4.0/scala-xml_sjs1_3-2.4.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.18/scala-library-2.13.18.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-javalib/1.22.0/scalajs-javalib-1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-js/scalajs-scalalib_2.13/2.13.18%2B1.22.0/scalajs-scalalib_2.13-2.13.18%2B1.22.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_sjs1_3/2.13.0/cats-core_sjs1_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-collections-core_sjs1_3/0.9.10/cats-collections-core_sjs1_3-0.9.10.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_sjs1_3/2.13.0/cats-kernel_sjs1_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_sjs1_3/2.13.0/algebra_sjs1_3-2.13.0.jar"
+    ],
+    "ioJVM": [
+      "/Users/bbuchsbaum/code/scala/neurosurf4s/modules/neurosurf4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/743bbc500a4cc79953a2/spatial4s/modules/spatial4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-data/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/c42ffad74301778951e7/locus4s/modules/locus4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-geometry/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/be34ba1347bf7c4631f4/mesh4s/modules/mesh4s-graph4s/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/core/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/indexed/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/algorithms/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/08e20f5c89874d9eb32d/graph4s/data/.jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/94c1a42c925a37ebcee0/image4s/modules/image4s-geometry/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/1acafa978adeaec8bfcf/gale/core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/34c0071f90095ef07887/zarr4s/core/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/.cache/scalafim-sbt/bases/8e3b34b164b00241/staging/f1485a830167fcac1bf1/neuroim4s/modules/neuroim4s-spaces/jvm/target/scala-3.7.4/classes",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala3-library_3/3.7.4/scala3-library_3-3.7.4.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/modules/scala-xml_3/2.4.0/scala-xml_3-2.4.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-core_3/2.13.0/cats-core_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-collections-core_3/0.9.10/cats-collections-core_3-0.9.10.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/cats-kernel_3/2.13.0/cats-kernel_3-2.13.0.jar",
+      "/Users/bbuchsbaum/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/typelevel/algebra_3/2.13.0/algebra_3-2.13.0.jar"
+    ]
+  },
+  "boundary_verdict": "Each core/IO platform has exactly one spatial4s core owner and only neuroim4s-spaces; no volume, registration, atlas, MVPA, or Root runtime.",
+  "diagnostic_limits": [
+    "show dependencyClasspath returned no printable value for two tasks; explicit exports supplied all four captures, with ioJVM collected separately.",
+    "classpaths-10 wrapper rejected heap mismatch before execution; classpaths-11 and io-jvm-classpath-14 used the resident 3g setting."
+  ],
+  "limits": "Two JS timing opt-ins unexecuted. Root cutover and independent consumer gate are separate requirements. No new timing or scientific acceptance claim.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-default-pins-09.log.gz",
+      "raw_sha256": "d83faa5f228ffc91f5ee0fee5c5ee26b5b3d1cfc9169bfc8284b8793ba3bedd4",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:06:34.897534+00:00",
+        "finished_utc": "2026-10-21T18:11:38.151519+00:00",
+        "duration_seconds": 303.254781,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreJVM/test",
+          "coreJS/test",
+          "ioJVM/test",
+          "ioJS/test",
+          "spatialJVM/test",
+          "spatialJS/test",
+          "spatialIoJVM/test",
+          "volumeJVM/test",
+          "volumeJS/test",
+          "volumeIoJVM/test",
+          "fixturesJVM/test",
+          "fixturesJS/test",
+          "show coreJVM/Compile/dependencyClasspath",
+          "show coreJS/Compile/dependencyClasspath",
+          "show ioJVM/Compile/dependencyClasspath",
+          "show ioJS/Compile/dependencyClasspath"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-default-pins-09.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3600.0,
+        "log_bytes": 83522
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-classpaths-10.log.gz",
+      "raw_sha256": "89e59772c6dda24005ac3f969afdc3c15f80a6feda8978a58d3cf679b2a267cb",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:13:15.575258+00:00",
+        "finished_utc": "2026-10-21T18:13:15.721980+00:00",
+        "duration_seconds": 0.146623,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "export coreJVM/Compile/dependencyClasspath",
+          "export coreJS/Compile/dependencyClasspath",
+          "export ioJVM/Compile/dependencyClasspath",
+          "export ioJS/Compile/dependencyClasspath"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-classpaths-10.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 300.0,
+        "log_bytes": 278
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-classpaths-11.log.gz",
+      "raw_sha256": "e960c8831dd0d9572ed13e8d19dc13507d8e298491590627d2113874827aaf3c",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:14:02.819129+00:00",
+        "finished_utc": "2026-10-21T18:14:09.863155+00:00",
+        "duration_seconds": 7.043861,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "export coreJVM/Compile/dependencyClasspath",
+          "export coreJS/Compile/dependencyClasspath",
+          "export ioJVM/Compile/dependencyClasspath",
+          "export ioJS/Compile/dependencyClasspath"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-classpaths-11.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 300.0,
+        "log_bytes": 10869
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-io-jvm-classpath-14.log.gz",
+      "raw_sha256": "cef6b92dd130cb0eddfcc4c594dbcc84a76bbfd295a64fa4697d48c4073853c8",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:18:23.200538+00:00",
+        "finished_utc": "2026-10-21T18:18:26.297759+00:00",
+        "duration_seconds": 3.097038,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "export ioJVM/Compile/dependencyClasspath"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-io-jvm-classpath-14.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 300.0,
+        "log_bytes": 3320
+      }
+    }
+  ]
+}

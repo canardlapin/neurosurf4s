@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "provider_revision": "1006fd33dc5b5d83d9e2187132ea91bd5a2857f8",
+  "provider_checkout_kind": "normal clean clone",
+  "provider_tracked_clean": true,
+  "provider_overrides": [],
+  "client_revision": "0d76b24dcc6af6bf5253f41fc43aa4b36b2cfa0b",
+  "client_source_archive": "clean-consumer-source.tar.gz",
+  "passed": 10,
+  "nonempty_test_tasks": 4,
+  "skipped": 0,
+  "failed": 0,
+  "contracts": [
+    "Public JVM/JS GIFTI ingestion; literal persisted topology key, vertex order and compact center embedding.",
+    "Independent semantic restore retains persistent ID and refuses invented shared live ownership.",
+    "Partial parcellation assignments and inverse fibers preserve sorted labels and ignored vertices.",
+    "Raw Xyz remains unframed; explicit world placement binds only to the declared template.",
+    "Independent scalar ramp midpoint projection and one white/pial topology owner.",
+    "Grid packaging preserves exact grid and sample-space owner."
+  ],
+  "adverse_evidence": "Consumer12 failed at its own compilation because label table was omitted; consumer-only correction 0d76b24 supplied public label metadata. No provider change.",
+  "limits": "This gate uses a local ProjectRef to a normal clean provider clone; all transitive pins are immutable published GitHub revisions. Remote consumer resolution and Root cutover are separate gates.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-clean-consumer-12.log.gz",
+      "raw_sha256": "1a6ff17cea59a6022653ac370045795b161de9361b8173b455bd797843860664",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:14:03.702324+00:00",
+        "finished_utc": "2026-10-21T18:16:07.385052+00:00",
+        "duration_seconds": 123.682763,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreConsumerJVM/test",
+          "coreConsumerJS/test",
+          "volumeConsumerJVM/test",
+          "volumeConsumerJS/test"
+        ],
+        "cwd": "/private/var/folders/9h/nkjq6vss7mqdl4ck7q1hd8ph0000gp/T/neurosurf4s-eco-u5-consumer-gscvrx3x",
+        "log": "/tmp/neurosurf4s-eco-u5-clean-consumer-12.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3000.0,
+        "log_bytes": 16614
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-clean-consumer-13.log.gz",
+      "raw_sha256": "7d1fc2ae5d92a828877f6f928dc26fbfd635906dcd1c3c964f0577de9fa7bb11",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:18:22.037249+00:00",
+        "finished_utc": "2026-10-21T18:19:34.444410+00:00",
+        "duration_seconds": 72.407269,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=3g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "coreConsumerJVM/test",
+          "coreConsumerJS/test",
+          "volumeConsumerJVM/test",
+          "volumeConsumerJS/test"
+        ],
+        "cwd": "/private/var/folders/9h/nkjq6vss7mqdl4ck7q1hd8ph0000gp/T/neurosurf4s-eco-u5-consumer-gscvrx3x",
+        "log": "/tmp/neurosurf4s-eco-u5-clean-consumer-13.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 3000.0,
+        "log_bytes": 12963
+      }
+    }
+  ]
+}
