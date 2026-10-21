@@ -1,0 +1,553 @@
+{
+  "source": "e1358918a0e81b318c649d007566c240ac379142",
+  "view_gate36": {
+    "passed": 512,
+    "tasks": [
+      "viewJVM/test",
+      "viewJS/test"
+    ],
+    "cases_per_task": 256,
+    "skipped": 0
+  },
+  "independent_source_review": "APPROVE e135891; original program source policies unchanged; fixture bindings and coordinate/frame replay checks correct",
+  "visibility": {
+    "status": "interior-pass",
+    "analytic_visibility_cases": 16,
+    "alpha_cases": 4,
+    "limits": "Bounded analytic specimens, not the frozen full-cortex matrix."
+  },
+  "linked": {
+    "status": "pass",
+    "restoreExact": true,
+    "checkpoints": 8,
+    "limits": "Synthetic temporal/morph/four-view/flat-map replay; exact surface/decorated/flat restoration and reference comparison."
+  },
+  "resources": {
+    "status": "pass",
+    "checks": {
+      "referenceContextsReleased": true,
+      "candidateContextsReleased": true,
+      "hostReleased": true,
+      "nativeAdmitted": true,
+      "resizeBackExact": true,
+      "noWarmUploads": true,
+      "stableWarmResources": true,
+      "boundedRetainedGrowth": true
+    },
+    "retainedGrowthBytes": 896720,
+    "limits": "One source specimen and twenty same-page create/render/resize/dispose cycles; JS heap only; detached canvases, backing stores, GPU memory and native RSS are not measured. Unequal work per route; native resize and warmup retention are not qualified. No claim about untested families or long-run leakage."
+  },
+  "candidate_bundle": {
+    "path": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/neurosurf4s-u5-qualification/candidate-e135891-main.js",
+    "sha256": "dde7449a40470dff58a64c108a1667c0e1bc8a4826c4d4cc5f516c87f3abb490",
+    "bytes": 12368514
+  },
+  "artifacts": [
+    {
+      "kind": "visibility",
+      "archive": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/neurosurf4s-u5-qualification/browser-visibility-27.tar.gz",
+      "sha256": "1a14e152b1d3e05a361779145b91d314d1c3e4fe7f95b30c4dc576b03d65697c",
+      "bytes": 811601,
+      "provenance": {
+        "purpose": "16 bounded analytic P4 specimens; not frozen cortex matrix qualification",
+        "candidateCommit": "3d2c494e130904bd355ec60affc6e82724cf887c",
+        "referenceCommit": "7b44e4491c52f7cea4f0eaae6472d906de041010",
+        "candidateTrackedDiffSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "moduleSha256": "1191b02f68934d89ce137a717918d22d8a2f68836d18c981a0bff809cca9ea8c",
+        "runnerSha256": "f0a20fcff18c782a8cd57b38607f190935a181079f9aed561889d22694cae3d3",
+        "fixtureSha256": "d788d1c37a8d335a261def7697b9f0bc364d6ced53cb534a6bb24baf231351df",
+        "referenceAdapterSha256": "055bbbf231bd554e550eb399bf32a528cbc94d3f2328d18e82fe7205115e22c6",
+        "startedAt": "2026-10-21T18:56:59.829Z",
+        "referenceBundleSha256": "44c6890b2c1235a3c3598b936b5215d1964d005a0e843f931ce7a2bd8534c24c",
+        "browserVersion": "151.0.7922.34"
+      }
+    },
+    {
+      "kind": "linked",
+      "archive": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/neurosurf4s-u5-qualification/browser-linked-37.tar.gz",
+      "sha256": "add580703b6d892b50b1d1506e3b9f0b58a2b39638e08d178089dbbf4dce2a13",
+      "bytes": 2099872,
+      "provenance": {
+        "moduleSha256": "dde7449a40470dff58a64c108a1667c0e1bc8a4826c4d4cc5f516c87f3abb490",
+        "referenceBundleSha256": "44c6890b2c1235a3c3598b936b5215d1964d005a0e843f931ce7a2bd8534c24c",
+        "runnerSha256": "457708e5a2d52ad6d5e9d3c47d873b3e6401639cda53476c5f7b3096abe311ed",
+        "fixtureSha256": "c88832c46bff1846b7a53f07dbd741118301b0c2e2a4a8c8cf6efbccff886b5d",
+        "startedAt": "2026-10-21T21:05:24.129Z"
+      }
+    },
+    {
+      "kind": "resources",
+      "archive": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/neurosurf4s-u5-qualification/browser-resources-38.tar.gz",
+      "sha256": "863ae63c7e0ccf5c2c64454899a31afbfa0630fdef3b02d663120d9c02e296eb",
+      "bytes": 2662,
+      "provenance": {
+        "schema": "surface-resource-cycles.v1",
+        "startedAt": "2026-10-21T21:08:20.697Z",
+        "moduleSha256": "dde7449a40470dff58a64c108a1667c0e1bc8a4826c4d4cc5f516c87f3abb490",
+        "inputSha256": "3a4d55421dcf97358924846636c71c31e8c2019e9cb80d472f56ea5f9e76af59",
+        "referenceBundleSha256": "44c6890b2c1235a3c3598b936b5215d1964d005a0e843f931ce7a2bd8534c24c",
+        "runnerSha256": "6ccbd6614d113872fbc0e9dfc66e8c201d94f4eac53447568fde28df46aa2028",
+        "adapterSha256": "055bbbf231bd554e550eb399bf32a528cbc94d3f2328d18e82fe7205115e22c6",
+        "resourceContractsSha256": "2e0b8d815e1e293fcec33e3204bafe1afb43ff74acecdf8698042deefa30d704",
+        "threeSha256": "bbf5ed13fe4373f5bd38b14ea8e62e9f157327da5638edc6d3863e08b167c9c7",
+        "auditBefore": {
+          "exitCode": 0,
+          "stdout": "No automated top-level browser processes found.\n",
+          "stderr": ""
+        },
+        "browserProfile": "lean-browser-playwright",
+        "requestedGpu": "ANGLE Metal",
+        "browserVersion": "151.0.7922.34",
+        "auditAfter": {
+          "exitCode": 0,
+          "stdout": "No automated top-level browser processes found.\n",
+          "stderr": ""
+        },
+        "finishedAt": "2026-10-21T21:08:39.260Z",
+        "cleanupFailures": []
+      }
+    }
+  ],
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-browser-link-26.log.gz",
+      "raw_sha256": "9abffa3800b8dded148229cde362b8b0355847e194cf95cb47c140ca26cac427",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:54:38.934375+00:00",
+        "finished_utc": "2026-10-21T18:55:42.274690+00:00",
+        "duration_seconds": 63.339657,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "reload",
+          "viewExamplesJS/fastLinkJS",
+          "export viewJavafxJVM/Test/fullClasspath",
+          "export viewExamplesJVM/Test/fullClasspath",
+          "export viewThreeJS/Compile/dependencyClasspath",
+          "export viewJavafxJVM/Compile/dependencyClasspath"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-link-26.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 2400.0,
+        "log_bytes": 30207
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-linked-29.log.gz",
+      "raw_sha256": "7dadc0daad25a4a90876e65e949168ff109da37309b174b56972d3acf3da4844",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:58:47.879105+00:00",
+        "finished_utc": "2026-10-21T18:58:52.008411+00:00",
+        "duration_seconds": 4.129146,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-linked-proof.mjs",
+          "--candidate-root",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s",
+          "--scalafim-module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--reference-bundle",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27/reference-source-build/reference.mjs",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-linked-29"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-linked-29.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 900.0,
+        "log_bytes": 479
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-linked-32.log.gz",
+      "raw_sha256": "616d1de3b20f0b8cccd20611b77e71c405ad9de7cc487ed6429f5e60e98c3f9d",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:02:58.737473+00:00",
+        "finished_utc": "2026-10-21T19:03:01.935893+00:00",
+        "duration_seconds": 3.198264,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-linked-proof.mjs",
+          "--candidate-root",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s",
+          "--scalafim-module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--reference-bundle",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27/reference-source-build/reference.mjs",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-linked-32"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-linked-32.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 900.0,
+        "log_bytes": 479
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-linked-33.log.gz",
+      "raw_sha256": "eff6fad29a157ec1c043c73f98f0eecc8e2bd2533cc4503f8d4dd128a7bf4508",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:04:15.314708+00:00",
+        "finished_utc": "2026-10-21T19:04:18.314229+00:00",
+        "duration_seconds": 2.999386,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-linked-proof.mjs",
+          "--candidate-root",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s",
+          "--scalafim-module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--reference-bundle",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27/reference-source-build/reference.mjs",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-linked-33"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-linked-33.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 900.0,
+        "log_bytes": 653
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-linked-37.log.gz",
+      "raw_sha256": "827b5d941dc47aa84b792183f31a59f555d1adee323df50f095fe0b357ffe87b",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T21:05:23.851260+00:00",
+        "finished_utc": "2026-10-21T21:05:27.813667+00:00",
+        "duration_seconds": 3.962261,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-linked-proof.mjs",
+          "--candidate-root",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s",
+          "--scalafim-module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--reference-bundle",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27/reference-source-build/reference.mjs",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-linked-37"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-linked-37.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 240.0,
+        "log_bytes": 15395
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-resources-38.log.gz",
+      "raw_sha256": "413ce4494fbd437b0c81c9d92d830bc890b711d433fcfde411dc04526b3697ac",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T21:08:20.652906+00:00",
+        "finished_utc": "2026-10-21T21:08:39.330944+00:00",
+        "duration_seconds": 18.677761,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-resource-cycles.mjs",
+          "--module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--input",
+          "/private/tmp/neurosurf4s-eco-u5-resource-spec-38.json",
+          "--reference-root",
+          "/Users/bbuchsbaum/code/jscode/surfviewjs",
+          "--reference-bundle",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27/reference-source-build/reference.mjs",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-resources-38"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-resources-38.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 300.0,
+        "log_bytes": 473
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-browser-visibility-27.log.gz",
+      "raw_sha256": "c910de29fb03c0b5171b9b9d4c6f2ac5986de4a80b5f7f45286ab82c3af6acdd",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:56:59.278256+00:00",
+        "finished_utc": "2026-10-21T18:57:06.679253+00:00",
+        "duration_seconds": 7.400471,
+        "command": [
+          "node",
+          "tools/surface-view/parity/run-visibility-proof.mjs",
+          "--candidate-root",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s",
+          "--scalafim-module",
+          "/Users/bbuchsbaum/code/scala/neurosurf4s/examples/surface-view/js/target/scala-3.7.4/neurosurf4s-examples-surface-view-fastopt/main.js",
+          "--out",
+          "/private/tmp/neurosurf4s-eco-u5-browser-visibility-27"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-browser-visibility-27.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 900.0,
+        "log_bytes": 1975
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-linked-fixture-34.log.gz",
+      "raw_sha256": "d0a6df986d616b45f1d74d13fbaa3cd340d975fe0a18c6515182930b84ea9502",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:13:14.949618+00:00",
+        "finished_utc": "2026-10-21T19:19:58.458881+00:00",
+        "duration_seconds": 403.504678,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "viewJVM/test",
+          "viewJS/test",
+          "viewExamplesJS/fastLinkJS"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-linked-fixture-34.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 1800.0,
+        "log_bytes": 27220
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-linked-fixture-35.log.gz",
+      "raw_sha256": "4383ab58fe416561f3df332ab540bd17a74c801d804d739427462839fad262c2",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:21:14.700931+00:00",
+        "finished_utc": "2026-10-21T21:01:45.089282+00:00",
+        "duration_seconds": 533.94662,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "viewJVM/test",
+          "viewJS/test",
+          "viewExamplesJS/fastLinkJS"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-linked-fixture-35.log",
+        "exit_code": 1,
+        "child_returncode": 1,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 1800.0,
+        "log_bytes": 25612
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-linked-fixture-36.log.gz",
+      "raw_sha256": "b922d5b8ce9d33621a1f09272253aa6611f8c1d005fa62fe9d23ca2dc3a6153c",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T21:03:07.748402+00:00",
+        "finished_utc": "2026-10-21T21:03:32.575867+00:00",
+        "duration_seconds": 24.827119,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "SBT_WARM_HEAP=6g",
+          "python3",
+          "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+          "viewJVM/test",
+          "viewJS/test",
+          "viewExamplesJS/fastLinkJS"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-linked-fixture-36.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 1800.0,
+        "log_bytes": 50399
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-classpaths-28.log.gz",
+      "raw_sha256": "386cdc859187bc56c754b5caf922d44f8cd8625d5150336bfc12a47fba1ddfbe",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T18:57:00.404279+00:00",
+        "finished_utc": "2026-10-21T18:57:10.443631+00:00",
+        "duration_seconds": 10.039112,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+          "python3",
+          "/tmp/neurosurf-native-classpaths-u5.py"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-classpaths-28.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 600.0,
+        "log_bytes": 18876
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-correctness-31.log.gz",
+      "raw_sha256": "215b1851dabd1f83fc57848becff7cd4e7873655ea4ad013677a31458461abef",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:02:57.184007+00:00",
+        "finished_utc": "2026-10-21T19:02:59.980738+00:00",
+        "duration_seconds": 2.796631,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxSurfaceCorrectnessProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-correctness-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 564
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-gifti-31.log.gz",
+      "raw_sha256": "f2ee9c693c451c086e7958d27d13225323b0a5d0dd887208fe0fd095339a4960",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:03:02.686899+00:00",
+        "finished_utc": "2026-10-21T19:03:04.906718+00:00",
+        "duration_seconds": 2.219652,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxGiftiParityProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-gifti-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 768
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-interaction-31.log.gz",
+      "raw_sha256": "5dfe68a78b75e07113d055ac02cc0f68c460944ef33e03fec0beea0b9cf9f53f",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:03:00.096656+00:00",
+        "finished_utc": "2026-10-21T19:03:02.598745+00:00",
+        "duration_seconds": 2.501841,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxSurfaceInteractionProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-interaction-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 693
+      }
+    }
+  ],
+  "adverse_evidence": [
+    "Linked29/32/33 failed because fixture lacked references for both geometry variants; no admission rules relaxed. Exception transport normalization exposes the actual typed error.",
+    "Gate34 new regression compared fresh pose objects by reference equality; fixed assertion to exact coordinates and supplied frame witness.",
+    "Gate35 approximation test timed out during measured host load400 and wall-clock stall; same complete owning suites passed in25seconds in gate36 without assertion/tolerance/timeout changes."
+  ],
+  "limits": "No new full-cortex/browser performance claim; reference source7b44e44; installed Chromium151.0.7922.34, Node26.7.0, Playwright backend only. All session-owned browsers closed; post-run audit found none."
+}

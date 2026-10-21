@@ -1,0 +1,120 @@
+{
+  "runtime_source": "62b81f43739509a8a1791c49cf6234c6bf072ac5",
+  "probe_source": "3d2c494e130904bd355ec60affc6e82724cf887c",
+  "runtime_inputs": "native-runtime-inputs.json",
+  "all_75_entries_and_component_verified_after_execution": true,
+  "runtime_archive": {
+    "path": "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/neurosurf4s-u5-qualification/native-runtime-31.tar.gz",
+    "bytes": 90206910,
+    "sha256": "bf48d8196b6e0d9f9f03b84bf875a6597c716400bb9f3cfe50473c441a952345"
+  },
+  "probes_passed": 3,
+  "limits": "Named JavaFX24.0.1, macOS ARM64, JDK25, ES2, legacy renderer only. No defaultJavaFX21 or affine renderer admission. No Root runtime classes.",
+  "logs": [
+    {
+      "path": "neurosurf4s-eco-u5-native-correctness-31.log.gz",
+      "raw_sha256": "215b1851dabd1f83fc57848becff7cd4e7873655ea4ad013677a31458461abef",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:02:57.184007+00:00",
+        "finished_utc": "2026-10-21T19:02:59.980738+00:00",
+        "duration_seconds": 2.796631,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxSurfaceCorrectnessProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-correctness-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 564
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-interaction-31.log.gz",
+      "raw_sha256": "5dfe68a78b75e07113d055ac02cc0f68c460944ef33e03fec0beea0b9cf9f53f",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:03:00.096656+00:00",
+        "finished_utc": "2026-10-21T19:03:02.598745+00:00",
+        "duration_seconds": 2.501841,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxSurfaceInteractionProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-interaction-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 693
+      }
+    },
+    {
+      "path": "neurosurf4s-eco-u5-native-gifti-31.log.gz",
+      "raw_sha256": "f2ee9c693c451c086e7958d27d13225323b0a5d0dd887208fe0fd095339a4960",
+      "metadata": {
+        "schema_version": 1,
+        "started_utc": "2026-10-21T19:03:02.686899+00:00",
+        "finished_utc": "2026-10-21T19:03:04.906718+00:00",
+        "duration_seconds": 2.219652,
+        "command": [
+          "env",
+          "-u",
+          "JAVA_TOOL_OPTIONS",
+          "python3",
+          "/Volumes/My Passport for Mac/codex-work/scalafim-eco-01a153cc-20261021/plsneuro-main-qualified-09/tools/launch-desktop.py",
+          "--classpath",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/classpath.txt",
+          "--jdk",
+          "/opt/homebrew/Cellar/openjdk/25.0.1/libexec/openjdk.jdk/Contents/Home",
+          "--compat",
+          "/private/tmp/neurosurf4s-eco-u5-native-31/compatibility.jar",
+          "--surface-renderer",
+          "legacy",
+          "--main-class",
+          "neurosurf4s.surface.view.javafx.JavaFxGiftiParityProbe"
+        ],
+        "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s",
+        "log": "/tmp/neurosurf4s-eco-u5-native-gifti-31.log",
+        "exit_code": 0,
+        "child_returncode": 0,
+        "reason": "exited",
+        "detail": null,
+        "timeout_seconds": 180.0,
+        "log_bytes": 768
+      }
+    }
+  ]
+}
