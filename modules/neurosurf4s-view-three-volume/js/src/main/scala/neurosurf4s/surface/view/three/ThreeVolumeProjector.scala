@@ -259,7 +259,7 @@ object ThreeVolumeProjector:
       ordinal += 1
     representable
 
-  private def worldPoint(geometry: SurfaceGeometry, vertex: VertexId): WorldPoint =
+  private def worldPoint(geometry: SurfaceGeometry, vertex: VertexId): spatial4s.Xyz =
     SurfaceWorldLink.worldPoint(geometry, vertex)
       .fold(error => throw new IllegalArgumentException(error.message), value => value)
 
