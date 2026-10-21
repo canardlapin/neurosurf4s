@@ -90,7 +90,10 @@ class SurfaceCompositionDocumentSuite extends munit.FunSuite:
     val display = ok(SurfaceDisplayFrame.declare(model, fixture.Surface, fixture.Frame))
     val restored = ok(decoded.restore(model, fixture.Bindings, Map(fixture.Surface -> display)))
     assertEquals(restored.presentation.geometryPresentations, state.geometryPresentations)
-    assertEquals(restored.navigation.views.map(_.pose), navigation.views.map(_.pose))
+    // Poses own fresh validated points after decode; compare coordinates and the supplied frame witness.
+    assertEquals(restored.navigation.views.map(_.pose.target.coordinates), Vector.fill(4)(Vector(0.0, 0.0, 0.0)))
+    assertEquals(restored.navigation.views.map(_.pose.eye.coordinates), fixture.Eyes)
+    assert(restored.navigation.views.forall(_.pose.frame eq fixture.Frame))
     val before = fixture.composition(model, state)
     val after = ok(SurfaceCompositionCompiler.compile(model, restored.presentation, restored.navigation.views))
     assertEquals(after.receipt, before.receipt)
