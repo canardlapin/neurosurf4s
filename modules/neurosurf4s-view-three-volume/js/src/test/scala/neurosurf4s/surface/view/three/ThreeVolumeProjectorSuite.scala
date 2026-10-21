@@ -189,11 +189,6 @@ class ThreeVolumeProjectorSuite extends munit.FunSuite:
         observations += 1
     js.Dynamic.literal(status = (if mismatches == 0 then "pass" else "fail"), observations = observations, mismatches = mismatches)
 
-object ThreeVolumeProjectionBrowserParity:
-  @JSExportTopLevel("runScalafimVolumeProjectionParity")
-  def run(three: js.Dynamic): js.Dynamic =
-    new ThreeVolumeProjectorSuite().browserParity(three)
-
   test("unsupported GPU projection policies fail before WebGL interpretation"):
     val fixture = SurfaceFeatureFixture.projectionCase
     val unsupported = fixture.morphism.copy(plan = fixture.morphism.plan.copy(
@@ -207,4 +202,10 @@ object ThreeVolumeProjectionBrowserParity:
       fixture.policy
     )
     assert(rejected.left.exists(_.message.contains("midpoint sampling")))
+
+
+object ThreeVolumeProjectionBrowserParity:
+  @JSExportTopLevel("runScalafimVolumeProjectionParity")
+  def run(three: js.Dynamic): js.Dynamic =
+    new ThreeVolumeProjectorSuite().browserParity(three)
 
