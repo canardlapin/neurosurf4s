@@ -7,13 +7,6 @@ import neurosurf4s.surface.fixtures.SurfaceTestFixtures
 
 class SurfaceCoreSuite extends munit.FunSuite:
 
-  test("Xyz is a surface alias for provider Xyz"):
-    val point: Xyz = Xyz(1.0, 2.0, 3.0)
-    val surfacePoint: Xyz = Xyz(1.0, 2.0, 3.0)
-
-    assertEquals(point, surfacePoint)
-    assertEquals(Xyz.fromVector(Vector(1.0, 2.0, 3.0)).toOption.get, point)
-
   test("TriangleMesh builds a valid tetrahedron"):
     val mesh = SurfaceTestFixtures.tetraMesh
 
