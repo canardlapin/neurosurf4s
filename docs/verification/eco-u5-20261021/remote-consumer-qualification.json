@@ -1,0 +1,43 @@
+{
+  "provider_source_revision": "1006fd33dc5b5d83d9e2187132ea91bd5a2857f8",
+  "published_main_revision": "a42bba99407e82f78a5a772b2962c0e91afd2bb0",
+  "client_revision": "964206d38f7a4c8c07c8d617807ba4d3e6ac95b7",
+  "source_archive": "remote-consumer-source.tar.gz",
+  "provider_resolution": "Immutable GitHub ProjectRef; no checkout overrides",
+  "passed": 10,
+  "nonempty_tasks": 4,
+  "failed": 0,
+  "skipped": 0,
+  "log": {
+    "path": "neurosurf4s-eco-u5-remote-consumer-15.log.gz",
+    "raw_sha256": "cf1d2178272c6955e9c716109a71662e79854ef049ef7fbf733dadf7b0db1dfc",
+    "metadata": {
+      "schema_version": 1,
+      "started_utc": "2026-10-21T18:24:36.993978+00:00",
+      "finished_utc": "2026-10-21T18:27:12.869242+00:00",
+      "duration_seconds": 155.875593,
+      "command": [
+        "env",
+        "-u",
+        "JAVA_TOOL_OPTIONS",
+        "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+        "SBT_WARM_HEAP=3g",
+        "python3",
+        "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+        "coreConsumerJVM/test",
+        "coreConsumerJS/test",
+        "volumeConsumerJVM/test",
+        "volumeConsumerJS/test"
+      ],
+      "cwd": "/private/var/folders/9h/nkjq6vss7mqdl4ck7q1hd8ph0000gp/T/neurosurf4s-eco-u5-consumer-gscvrx3x",
+      "log": "/tmp/neurosurf4s-eco-u5-remote-consumer-15.log",
+      "exit_code": 0,
+      "child_returncode": 0,
+      "reason": "exited",
+      "detail": null,
+      "timeout_seconds": 3000.0,
+      "log_bytes": 12006
+    }
+  },
+  "limits": "Remote core/IO/optional-volume consumer qualification; later view extraction and Root cutover are separate."
+}
