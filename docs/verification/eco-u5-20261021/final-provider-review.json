@@ -1,0 +1,8 @@
+{
+  "reviewer": "volume_view_astra_review",
+  "verdict": "APPROVE bounded provider candidate; no material findings",
+  "source_revision": "1006fd33dc5b5d83d9e2187132ea91bd5a2857f8",
+  "evidence_revision": "9ce7545a9735575d6bb19cc47544051170bfea88",
+  "scope": "Pin-only delta after approved source migration; qualification log hashes, exact counts, all4 classpaths and clean consumer source/archive assertions verified.",
+  "limits": "Remote provider resolution, Root cutover/campaign and native/performance acceptance separate."
+}
