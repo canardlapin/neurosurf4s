@@ -35,10 +35,13 @@ try{
  await page.goto(new URL(fsUrl(resolve(here,'index.html')),server.resolvedUrls.local[0]).href);
  await page.evaluate(()=>{window.exports={};document.body.style.cssText='margin:0;background:white';});
  await page.addScriptTag({url:new URL(fsUrl(modulePath),server.resolvedUrls.local[0]).href});
- const proofJson=await page.evaluate(async({refUrl,threeUrl,adapterUrl})=>{
+ const proof=await page.evaluate(async({refUrl,threeUrl,adapterUrl})=>{
   const ref=await import(refUrl),three=await import(threeUrl),{mountReferenceView}=await import(adapterUrl);
   const canvas=document.createElement('canvas'),flat=document.createElement('canvas');document.body.append(canvas,flat);
-  const candidate=window.exports.runScalafimLinkedViewProbe(three,canvas,flat);canvas.remove();flat.remove();
+  let candidate;
+  try { candidate=window.exports.runScalafimLinkedViewProbe(three,canvas,flat); }
+  catch(error) { throw new Error('candidate linked probe failed: '+String(error)); }
+  canvas.remove();flat.remove();
   const vertices=[[-1,-1,0],[1,-1,0],[1,1,0],[-1,1,0]],faces=[[0,1,2],[0,2,3]];
   const frames=[[-1,0,.25,-.5],[0,1,.75,.25],[-.25,-1,.5,1]];
   // SurfViewJS treats palette entries as a discrete lookup, not color stops.
@@ -60,9 +63,8 @@ try{
     finally{mounted.dispose();root.remove();}
    }
   }
-  return JSON.stringify(candidate);
+  return candidate;
  },{refUrl:fsUrl(bundle),threeUrl:fsUrl(resolve(reference,'node_modules/three/build/three.module.js')),adapterUrl:fsUrl(resolve(here,'reference-view.mjs'))});
- const proof=JSON.parse(proofJson);
  const rows=[];
  for(const c of proof.captures){
   const ref=new PNG({width:512,height:512});for(const [i,url]of c.references.entries())PNG.bitblt(decode(url),ref,0,0,256,256,(i%2)*256,Math.floor(i/2)*256);
