@@ -29,7 +29,7 @@ bounded by tree depth, although pathological coincident data can require a full
 scan. There is no per-query mesh export or content hash.
 
 Reproducible synthetic JVM measurement:
-`sbt "surfaceViewJVM/Test/runMain scalafim.surface.view.SurfaceWorldIndexBenchmark"`.
+`sbt "viewJVM/Test/runMain neurosurf4s.surface.view.SurfaceWorldIndexBenchmark"`.
 The 2026-09-12 run used 1,000 independently checked queries per cardinality:
 
 | Vertices | Build ms | Retained primitive bytes | Scan ms | Indexed ms | Setup crossover queries |

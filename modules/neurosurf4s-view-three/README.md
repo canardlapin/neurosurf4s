@@ -44,7 +44,7 @@ The production project uses the repository-wide CommonJS setting. To build the
 standalone real-browser acceptance probe as a classic script:
 
 ```text
-sbt 'set surfaceViewThreeJS / scalaJSLinkerConfig ~= (_.withModuleKind(org.scalajs.linker.interface.ModuleKind.NoModule))' surfaceViewThreeJS/fastLinkJS
+sbt 'set viewThreeJS / scalaJSLinkerConfig ~= (_.withModuleKind(org.scalajs.linker.interface.ModuleKind.NoModule))' viewThreeJS/fastLinkJS
 ```
 
 The checked-in harness resolves the linked output and the local SurfViewJS

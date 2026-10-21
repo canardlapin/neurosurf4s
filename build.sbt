@@ -198,3 +198,5 @@ addCommandAlias("neurosurf4sFixtureTestAll", ";fixturesJVM/test;fixturesJS/test"
 addCommandAlias("neurosurf4sViewTestAll", ";viewJVM/test;viewJS/test;viewLinkJVM/test;viewLinkJS/test;viewVolumeJVM/test;viewVolumeJS/test;viewRasterJVM/test;viewRasterJS/test")
 
 addCommandAlias("neurosurf4sBackendTestAll", ";viewJavafxJVM/test;viewThreeJS/test;viewThreeVolumeJS/test;viewExamplesJVM/test;viewExamplesJS/test;surfaceExamplesJVM/test")
+
+addCommandAlias("neurosurf4sViewVisualQaJVM", ";viewExamplesJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxGiftiParityProbe;viewJavafxJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxSurfaceCorrectnessProbe;viewJavafxJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxSurfaceInteractionProbe")

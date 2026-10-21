@@ -37,7 +37,7 @@ requires exact surface, face, and nearest-vertex parity for an interior pick.
 Run the matching JavaFX fixture gate with:
 
 ```sh
-sbt surfaceViewVisualQaJVM
+sbt neurosurf4sViewVisualQaJVM
 ```
 
 The JavaFX GIFTI probe and browser page use the same 960 x 540 dimensions,
