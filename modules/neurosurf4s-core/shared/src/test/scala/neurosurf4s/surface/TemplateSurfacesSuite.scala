@@ -117,3 +117,29 @@ class TemplateSurfacesSuite extends munit.FunSuite:
       Some("tpl-fsaverage/tpl-fsaverage_hemi-R_den-164k_desc-std_sphere.surf.gii")
     )
     assertEquals(TemplateSphereAssets.find(left, SphereRegistration.FsLR), None)
+
+  test("checked surface binding retains native interpolation and rejects unsupported normalization and endpoints"):
+    val plan = ok(TemplateResampling.plan(onFsAverage, turned))
+    val source = SurfaceGeometry(ico5, Hemisphere.Left, SurfaceKind.White)
+    val target = SurfaceGeometry(ico5Turned, Hemisphere.Left, SurfaceKind.Inflated)
+    val binding = ok(SurfaceResamplingBinding.checked(plan, source, target))
+    assertEquals(binding.validateEndpoints, Right(()))
+    assert(binding.normalizedCsr eq binding.normalizedCsr)
+    val values = Array.tabulate(10242)(i => math.sin(.37 * i))
+    val expected = ok(plan.resample(values))
+    val actual = new Array[Double](10242)
+    val totals = new Array[Double](10242)
+    binding.normalizedCsr.foreachStoredEntry: (row, col, weight) =>
+      actual(row) += weight * values(col)
+      totals(row) += weight
+    for row <- actual.indices do
+      assertEqualsDouble(actual(row), expected(row), 1e-12)
+      assertEqualsDouble(totals(row), 1.0, 1e-12)
+    for normalization <- Vector(SurfaceResampling.Normalization.Sum, SurfaceResampling.Normalization.None) do
+      assertEquals(SurfaceResamplingBinding.checked(plan, source, target, normalization).left.toOption,
+        Some(SurfaceResamplingBindingError.UnsupportedNormalization(normalization)))
+    val wrong = SurfaceGeometry(ico5Turned, Hemisphere.Right, SurfaceKind.Inflated)
+    SurfaceResamplingBinding.checked(plan, source, wrong) match
+      case Left(SurfaceResamplingBindingError.Endpoint(SurfaceError.InvalidGeometry(reason))) =>
+        assert(reason.contains("hemisphere"), reason)
+      case other => fail(s"expected typed endpoint refusal, got $other")

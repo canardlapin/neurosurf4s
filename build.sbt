@@ -101,6 +101,20 @@ lazy val volumeIoJVM = project.in(file("modules/neurosurf4s-volume-io/jvm"))
   .dependsOn(ProjectRef(neuroim4sBuild, "ioJVM"))
   .settings(commonSettings).settings(name := "neurosurf4s-volume-io")
 
+// Mixed anatomical routing stays optional above the surface and volume cores.
+lazy val routing = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-routing"))
+  .dependsOn(volume)
+  .settings(commonSettings).settings(name := "neurosurf4s-routing")
+  .jvmConfigure(_.dependsOn(ProjectRef(neuroim4sBuild, "routingJVM"), ProjectRef(neuroim4sBuild, "transformJVM")))
+  .jsConfigure(_.dependsOn(ProjectRef(neuroim4sBuild, "routingJS"), ProjectRef(neuroim4sBuild, "transformJS")))
+  .jsSettings(jsSettings)
+
+lazy val routingIoJVM = project.in(file("modules/neurosurf4s-routing-io/jvm"))
+  .dependsOn(routing.jvm % "compile->compile;test->test", spatialIoJVM, volumeIoJVM)
+  .dependsOn(ProjectRef(neuroim4sBuild, "transformIoJVM"))
+  .settings(commonSettings).settings(name := "neurosurf4s-routing-io")
+
 // Unpublished independent oracle bytes and qualification consumers; production modules never depend on this.
 lazy val fixtures = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Full).in(file("modules/neurosurf4s-test-fixtures"))
@@ -186,7 +200,7 @@ lazy val surfaceExamplesJVM = project.in(file("examples/surface-jvm"))
   .settings(commonSettings).settings(name := "neurosurf4s-examples-surface-jvm", publish / skip := true)
 
 lazy val root = project.in(file("."))
-  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js, view.jvm, view.js, viewLink.jvm, viewLink.js, viewVolume.jvm, viewVolume.js, viewRaster.jvm, viewRaster.js, viewJavafxJVM, viewThree.js, viewThreeVolume.js, viewExamples.jvm, viewExamples.js, surfaceExamplesJVM)
+  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, routing.jvm, routing.js, routingIoJVM, fixtures.jvm, fixtures.js, view.jvm, view.js, viewLink.jvm, viewLink.js, viewVolume.jvm, viewVolume.js, viewRaster.jvm, viewRaster.js, viewJavafxJVM, viewThree.js, viewThreeVolume.js, viewExamples.jvm, viewExamples.js, surfaceExamplesJVM)
   .settings(name := "neurosurf4s-root", publish / skip := true)
 
 addCommandAlias("neurosurf4sCoreTestAll", ";coreJVM/test;coreJS/test;ioJVM/test;ioJS/test")
@@ -200,3 +214,5 @@ addCommandAlias("neurosurf4sViewTestAll", ";viewJVM/test;viewJS/test;viewLinkJVM
 addCommandAlias("neurosurf4sBackendTestAll", ";viewJavafxJVM/test;viewThreeJS/test;viewThreeVolumeJS/test;viewExamplesJVM/test;viewExamplesJS/test;surfaceExamplesJVM/test")
 
 addCommandAlias("neurosurf4sViewVisualQaJVM", ";viewExamplesJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxGiftiParityProbe;viewJavafxJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxSurfaceCorrectnessProbe;viewJavafxJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxSurfaceInteractionProbe")
+
+addCommandAlias("neurosurf4sRoutingTestAll", ";routingJVM/test;routingJS/test;routingIoJVM/test")

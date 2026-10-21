@@ -113,7 +113,7 @@ object SurfaceResampling:
         k += 1
       Right(out)
 
-  private def normalised(groups: IArray[Int], vals: IArray[Double], size: Int): IArray[Double] =
+  private[surface] def normalised(groups: IArray[Int], vals: IArray[Double], size: Int): IArray[Double] =
     val totals = new Array[Double](size)
     var k = 0
     while k < vals.length do

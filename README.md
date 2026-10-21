@@ -19,11 +19,12 @@ alignment; `FramedSurface` declares and checks the world owner separately.
 | `io` | GIFTI and FreeSurfer readers, platform compression and caches |
 | `spatial` / `spatialIoJVM` | Explicit typed map transport and map readers |
 | `volume` / `volumeIoJVM` | Optional volume projection, ribbon sampling and route IO |
+| `routing` / `routingIoJVM` | Optional anatomical mixed-domain graphs, sampled operators and transform/cache IO |
 | `fixtures` | Unpublished oracle resources and qualification consumers |
 
 Run portable core/IO tests with `sbt neurosurf4sCoreTestAll`; optional suites have
 `neurosurf4sSpatialTestAll`, `neurosurf4sVolumeTestAll` and
-`neurosurf4sFixtureTestAll` aliases. The JVM map-reader module compiles in the
+`neurosurf4sFixtureTestAll` and `neurosurf4sRoutingTestAll` aliases. The JVM map-reader module compiles in the
 spatial gate; its behavioral oracle tests live in `fixtures`.
 
 [Qualification receipts](docs/verification/eco-u5-20261021/default-pin-qualification.json)
@@ -31,3 +32,10 @@ record the exact source, test counts and resolved core/IO dependency boundaries.
 Two JS timing opt-ins remain skipped. These gates do not establish native display,
 registration estimation or new performance claims. Persisted ScalaFIM schema tags
 and structural identity strings retain their original bytes across the move.
+
+Mixed routing depends on the optional volume/transform stack; surface core and
+rendering do not require it. Domain and stage descriptions preserve live domain
+owners, row order and persisted fingerprints. Anatomical compilers refuse value
+stages. `CompiledCoordinateComponent` pairs spatial sampling with the complete
+program and its deferred stages; it does not execute or certify those stages.
+ScalaFIM owns functional field sources, demand planning and value-stage execution.
