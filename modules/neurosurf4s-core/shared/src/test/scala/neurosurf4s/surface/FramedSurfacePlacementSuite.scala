@@ -42,4 +42,4 @@ class FramedSurfacePlacementSuite extends munit.FunSuite:
     val errors = compileErrors("val wrong: FramedSurface[second.type] = placed")
     assert(errors.contains("Required:") && errors.contains("FramedSurface"), errors)
     val huge = Affine.fromRowMajor[D3](Vector(1e308, 0, 0, 0, 0, 1e308, 0, 0, 0, 0, 1e308, 0, 0, 0, 0, 1)).toOption.get
-    assert(FramedSurface.in(first)(geometry.copy(surfaceToWorld = huge), SurfacePlacement.SurfaceToWorld).isLeft)
+    assert(FramedSurface.in(first)(SurfaceGeometry(mesh, geometry.hemisphere, geometry.kind, huge), SurfacePlacement.SurfaceToWorld).isLeft)
