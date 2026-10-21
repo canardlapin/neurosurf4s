@@ -46,9 +46,16 @@ class SurfaceSearchlightSuite extends munit.FunSuite:
     assert(SurfaceSearchlight.metricBalls(domain, SurfaceTestFixtures.sheetTopology, 1.0).isLeft)
 
   test("disconnected components never enter finite-radius neighborhoods"):
-    val disconnected = SurfaceTestFixtures.disconnectedGeometry
+    val disconnected = SurfaceGeometry(SurfaceTestFixtures.disconnectedGeometry.mesh, Hemisphere.Left, SurfaceKind.Pial)
     val d = SurfaceLocusDomain.semantic(DomainId.parse("disconnected").toOption.get, disconnected).toOption.get.value
     val system = SurfaceSearchlight.metricBalls(d, MeshTopology.from(disconnected.mesh), 1e6).toOption.get.value
     val rows = system.membership.ordinalRows.map(_.toVector).toVector
     assertEquals(rows(0), Vector(0, 1, 2))
     assertEquals(rows(3), Vector(3, 4, 5))
+
+  test("a region from another hidden semantic owner cannot typecheck as these centers"):
+    val errors = compileErrors("""
+      val other = SurfaceLocusDomain.semantic(DomainId.parse("other").toOption.get, SurfaceTestFixtures.tetraGeometry).toOption.get
+      SurfaceSearchlight.metricBalls(domain, topology, 1.0, Region.whole(other.value.finiteSpace))
+    """)
+    assert(errors.contains("Required:"), errors)

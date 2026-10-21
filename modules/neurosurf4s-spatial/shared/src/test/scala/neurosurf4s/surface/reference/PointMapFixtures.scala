@@ -28,7 +28,7 @@ object PointMapFixtures:
   def field(dims: Vector[Int], voxelToRas: Affine[D3])(d: Vector[Double] => Vector[Double]): DisplacementField =
     DisplacementField.make(dims, voxelToRas, sampled(dims, voxelToRas)(d)).toOption.get
 
-  def point(x: Double, y: Double, z: Double): WorldPoint = spatial4s.Xyz(x, y, z)
+  def point(x: Double, y: Double, z: Double): Xyz = spatial4s.Xyz(x, y, z)
 
   /** A canonical stage file: NIfTI-1, little-endian, vox_offset 352, float64 VECTOR. */
   def niftiBytes(dims: Vector[Int], voxelToRas: Affine[D3], values: Array[Double]): Array[Byte] =

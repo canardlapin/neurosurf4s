@@ -1,6 +1,6 @@
 package neurosurf4s.surface.reference
 
-import scalafim.examples.reference.FslrRouteExample
+import neurosurf4s.surface.io.GiftiSurfaceReader
 import neurosurf4s.surface.*
 import java.nio.file.{Files, Path}
 
@@ -8,8 +8,8 @@ class DeclaredMedialWallReaderSuite extends munit.FunSuite:
   private val manifest = Path.of(getClass.getResource("/fslr-route-example/manifest.json").toURI)
 
   test("mask bytes and declared hemisphere must agree before their receipt enters a route"):
-    val result = FslrRouteExample.synthetic(manifest)
-    val domain = result.mapped.reference.domain
+    val geometry = GiftiSurfaceReader.read(manifest.getParent.resolve("midthickness.surf.gii"), Hemisphere.Left, SurfaceKind.Midthickness)
+    val domain = geometry.meshDomainEither.toOption.get
     val path = manifest.getParent.resolve("cortex.label.gii")
     val bytes = Files.readAllBytes(path)
     val asset = DataAsset.make("mask", AssetSha256.of(bytes).value).toOption.get

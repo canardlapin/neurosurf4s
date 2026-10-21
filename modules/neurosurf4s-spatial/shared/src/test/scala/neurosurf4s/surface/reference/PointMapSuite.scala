@@ -7,17 +7,17 @@ class PointMapSuite extends munit.FunSuite:
   private val dims = Vector(6, 5, 4)
   private val grid = affine(2.0, 0.3, 0.0, -5.0, 0.0, 1.5, 0.2, -4.0, 0.1, 0.0, 2.5, -3.0, 0, 0, 0, 1)
 
-  private def at(i: Double, j: Double, k: Double): WorldPoint =
+  private def at(i: Double, j: Double, k: Double): Xyz =
     val w = grid(Vector(i, j, k)).toOption.get
     spatial4s.Xyz(w(0), w(1), w(2))
 
   private def mapOf(stages: PointMapStage*): PointMap = PointMap.make(stages.toVector).toOption.get
 
-  private def mapped(outcome: PointMapOutcome): WorldPoint = outcome match
+  private def mapped(outcome: PointMapOutcome): Xyz = outcome match
     case PointMapOutcome.Mapped(point) => point
     case other => fail(s"expected Mapped; got $other")
 
-  private def assertPoint(actual: WorldPoint, expected: Vector[Double], tol: Double): Unit =
+  private def assertPoint(actual: Xyz, expected: Vector[Double], tol: Double): Unit =
     actual.toVector.zip(expected).foreach: (a, e) =>
       assertEqualsDouble(a, e, tol)
 

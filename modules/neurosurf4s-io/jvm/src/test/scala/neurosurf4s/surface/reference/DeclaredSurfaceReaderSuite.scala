@@ -1,6 +1,5 @@
 package neurosurf4s.surface.reference
 
-import scalafim.testkit.RealAssetGate
 
 import neurosurf4s.surface.*
 import neurosurf4s.surface.gifti.*
@@ -9,7 +8,7 @@ import neurosurf4s.surface.io.GiftiSurfaceReader
 import java.nio.file.{Files, Path}
 import java.security.MessageDigest
 
-class DeclaredSurfaceReaderSuite extends munit.FunSuite, RealAssetGate:
+class DeclaredSurfaceReaderSuite extends munit.FunSuite:
   private val nlin6 = TemplateFrame.unsafe("MNI152NLin6Asym", "templateflow-24.2.0")
   private val realName = "tpl-fsLR_den-32k_hemi-L_midthickness.surf.gii"
   private val realDigest = "036a8b6c84fa4b581b7ad7b36d99190b57ad6755c9d7ef7adc3e9ffc6448f1af"
@@ -26,7 +25,10 @@ class DeclaredSurfaceReaderSuite extends munit.FunSuite, RealAssetGate:
     ).flatten.find(Files.isRegularFile(_))
 
   private def requireRealAsset(): Path =
-    requireReal(realAsset.nonEmpty, s"$realName (TEMPLATEFLOW_HOME, ~/.cache/templateflow, SCALAFIM_FSLR_ASSET_DIR)")
+    val what = s"$realName (TEMPLATEFLOW_HOME, ~/.cache/templateflow, SCALAFIM_FSLR_ASSET_DIR)"
+    if realAsset.isEmpty && sys.env.get("SCALAFIM_REQUIRE_REAL_ASSETS").contains("1") then
+      fail(s"$what not found and SCALAFIM_REQUIRE_REAL_ASSETS=1")
+    assume(realAsset.nonEmpty, s"$what not found; skipped (set SCALAFIM_REQUIRE_REAL_ASSETS=1 to fail instead)")
     realAsset.get
 
   private def withFile[A](bytes: Array[Byte])(f: Path => A): A =
