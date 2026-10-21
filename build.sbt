@@ -22,14 +22,22 @@ val forwardedOverrides = Seq("image4s", "mesh4s", "reframe4s", "neuroim4s", "gra
   }
 }
 
-lazy val spatial4sBuild = pinned("spatial4s", "f79674114dc5f1f88866708b74f7ea42e59895a8")
-lazy val locus4sBuild = pinned("locus4s", "e32b0aeba5c4d19c457b2329272b95b26c061943")
-lazy val mesh4sBuild = pinned("mesh4s", "35db08f864c86f211a14155fcaf6ef2fd811bcca")
-lazy val image4sBuild = pinned("image4s", "aef5e223169f0831c942694c4b109ab20d152217")
-lazy val graph4sBuild = pinned("graph4s", "613371f3bd0b12ce99352db0c637645eb62c6283")
-lazy val zarr4sBuild = pinned("zarr4s", "2a5ba963b151b62c739d1bf5a19d49202bb6ff29")
-lazy val neuroim4sBuild = pinned("neuroim4s", "21df6416e4e28e97cfbe39e20d7303349be7e4cf")
-lazy val reframe4sBuild = pinned("reframe4s", "7ec7feff96d4057a86196b5e86d592688b7c7f84")
+lazy val spatial4sRevision = "f79674114dc5f1f88866708b74f7ea42e59895a8"
+lazy val spatial4sBuild = pinned("spatial4s", spatial4sRevision)
+lazy val locus4sRevision = "e32b0aeba5c4d19c457b2329272b95b26c061943"
+lazy val locus4sBuild = pinned("locus4s", locus4sRevision)
+lazy val mesh4sRevision = "fd8b93ea42879ec5414342a084f05b831a4bbfc7"
+lazy val mesh4sBuild = pinned("mesh4s", mesh4sRevision)
+lazy val image4sRevision = "855a3a61029f78e975b43cd1736de1c94180c004"
+lazy val image4sBuild = pinned("image4s", image4sRevision)
+lazy val graph4sRevision = "613371f3bd0b12ce99352db0c637645eb62c6283"
+lazy val graph4sBuild = pinned("graph4s", graph4sRevision)
+lazy val zarr4sRevision = "2a5ba963b151b62c739d1bf5a19d49202bb6ff29"
+lazy val zarr4sBuild = pinned("zarr4s", zarr4sRevision)
+lazy val neuroim4sRevision = "4f75c2bf141449d032f9fe3c558ef13a22a4d59f"
+lazy val neuroim4sBuild = pinned("neuroim4s", neuroim4sRevision)
+lazy val reframe4sRevision = "622ab31f97bbe30a9bc6436464f3124643856f47"
+lazy val reframe4sBuild = pinned("reframe4s", reframe4sRevision)
 
 lazy val commonSettings = Seq(
   scalacOptions ++= Seq("-deprecation", "-feature", "-unchecked", "-Werror", "-release:17"),
