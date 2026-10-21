@@ -3,7 +3,6 @@ package neurosurf4s.surface.view
 import reframe4s.core.WorldLink
 import image4s.geometry.{Affine, D3, Point}
 import reframe4s.lie.FramedAffine
-import neuroim4s.image.world.*
 import neuroim4s.spaces.*
 import neurosurf4s.surface.*
 
