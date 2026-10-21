@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view
 
+import spatial4s.Xyz
 import intaglio.Rgba32
 import neurosurf4s.surface.VertexId
 
@@ -373,9 +374,9 @@ object SurfaceDecorationGeometry:
       depth: SurfaceDecorationDepthPolicy): SurfaceDecorationMesh =
     SurfaceDecorationMesh(id, origin, target, new FloatBufferView(positions), new FloatBufferView(normals), new IntBufferView(indices), color, depth)
 
-  private type P = SurfaceDecorationWorldPoint
+  private type P = Xyz
   private object P:
-    def apply(x: Double, y: Double, z: Double): P = SurfaceDecorationWorldPoint(x, y, z)
+    def apply(x: Double, y: Double, z: Double): P = Xyz(x, y, z)
   private def add(a: P, b: P): P = P(a.x + b.x, a.y + b.y, a.z + b.z)
   private def sub(a: P, b: P): P = P(a.x - b.x, a.y - b.y, a.z - b.z)
   private def scale(point: P, amount: Double): P = P(point.x * amount, point.y * amount, point.z * amount)

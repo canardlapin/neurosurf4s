@@ -11,7 +11,7 @@ final class SurfaceLayerTransaction private[view] (
   val preparedPlan: SurfaceRenderPlan,
   val layerIds: Vector[SurfaceLayerId]
 ):
-  private[scalafim] def rebase(
+  private[view] def rebase(
     currentModel: SurfaceViewerModel,
     currentState: SurfaceViewerState,
     currentPlan: SurfaceRenderPlan

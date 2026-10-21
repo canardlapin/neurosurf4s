@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view.raster
 
+import spatial4s.Xyz
 import intaglio.*
 import neurosurf4s.surface.*
 import neurosurf4s.surface.view.*
@@ -47,7 +48,7 @@ class SurfaceDecorationRasterSuite extends munit.FunSuite:
     val source = ok(SurfaceDecorationCompiler.compile(Vector(contour), plan))
     def stroke(name: String, z: Float, color: Rgba32): SurfaceDecorationMesh =
       val packet = source.contours.head.copy(id = SurfaceDecorationElementId(ok(SurfaceDecorationId.make(name)), "stroke"),
-        start = SurfaceDecorationWorldPoint(-.3, 0, z), end = SurfaceDecorationWorldPoint(.3, 0, z),
+        start = Xyz(-.3, 0, z), end = Xyz(.3, 0, z),
         style = style.copy(halo = style.halo.map(_.copy(color = color))))
       ok(SurfaceDecorationGeometry.lower(source.copy(contours = Vector(packet)), plan, size.width, size.height)).meshes.last
     glyph(plan).copy(meshes = Vector(stroke("near-red", .3f, Rgba32.unsafe(255, 0, 0, 153)),

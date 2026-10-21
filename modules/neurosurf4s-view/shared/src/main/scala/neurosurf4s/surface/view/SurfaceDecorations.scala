@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view
 
+import spatial4s.Xyz
 import intaglio.*
 import neurosurf4s.surface.{FaceId, VertexId}
 
@@ -145,9 +146,6 @@ final case class SurfaceContourDecoration(
   offset: SurfaceContourOffset = SurfaceContourOffset.Zero
 ) extends SurfaceDecoration
 
-final case class SurfaceDecorationWorldPoint(x: Double, y: Double, z: Double):
-  require(x.isFinite && y.isFinite && z.isFinite, "decoration point coordinates must be finite")
-
 final case class SurfaceDecorationElementId(decoration: SurfaceDecorationId, suffix: String):
   require(suffix.trim.nonEmpty, "decoration element suffix must not be blank")
 
@@ -155,7 +153,7 @@ final case class SurfaceMarkerPacket(
   id: SurfaceDecorationElementId,
   origin: SurfaceDisplayOrigin,
   anchor: SurfaceDecorationAnchor,
-  point: SurfaceDecorationWorldPoint,
+  point: Xyz,
   shape: SurfaceMarkerShape,
   size: SurfaceDecorationSize,
   color: Rgba32,
@@ -166,7 +164,7 @@ final case class SurfaceLabelPacket(
   id: SurfaceDecorationElementId,
   origin: SurfaceDisplayOrigin,
   anchor: SurfaceDecorationAnchor,
-  point: SurfaceDecorationWorldPoint,
+  point: Xyz,
   text: String,
   size: SurfaceDecorationSize,
   color: Rgba32,
@@ -179,8 +177,8 @@ final case class SurfaceContourPacket(
   origin: SurfaceDisplayOrigin,
   surface: SurfaceId,
   sourceEdge: (VertexId, VertexId),
-  start: SurfaceDecorationWorldPoint,
-  end: SurfaceDecorationWorldPoint,
+  start: Xyz,
+  end: Xyz,
   style: SurfaceContourStyle
 )
 
@@ -258,7 +256,7 @@ object SurfaceDecorationCompiler:
             index += 1
           error.fold[Either[SurfaceDecorationError, Unit]](Right(()))(Left(_))
 
-  private[view] def resolve(anchor: SurfaceDecorationAnchor, mesh: SurfaceMeshPacket): Either[SurfaceDecorationError, SurfaceDecorationWorldPoint] = anchor match
+  private[view] def resolve(anchor: SurfaceDecorationAnchor, mesh: SurfaceMeshPacket): Either[SurfaceDecorationError, Xyz] = anchor match
     case SurfaceDecorationAnchor.Vertex(value) => vertexPoint(mesh, value.surface, value.vertex)
     case SurfaceDecorationAnchor.Face(value) =>
       val faces = mesh.indices.length / 3
@@ -271,7 +269,7 @@ object SurfaceDecorationCompiler:
             pa <- vertexPoint(mesh, value.surface, VertexId(a))
             pb <- vertexPoint(mesh, value.surface, VertexId(b))
             pc <- vertexPoint(mesh, value.surface, VertexId(c))
-          yield SurfaceDecorationWorldPoint(
+          yield Xyz(
             value.a * pa.x + value.b * pb.x + value.c * pc.x,
             value.a * pa.y + value.b * pb.y + value.c * pc.y,
             value.a * pa.z + value.b * pb.z + value.c * pc.z)
@@ -306,18 +304,18 @@ object SurfaceDecorationCompiler:
     case SurfaceContourPolicy.RoiExterior(selected) => selected(left) != selected(right)
     case SurfaceContourPolicy.Ignore(values, underlying) => !values(left) && !values(right) && include(left, right, underlying)
 
-  private def vertexPoint(mesh: SurfaceMeshPacket, surface: SurfaceId, vertex: VertexId): Either[SurfaceDecorationError, SurfaceDecorationWorldPoint] =
+  private def vertexPoint(mesh: SurfaceMeshPacket, surface: SurfaceId, vertex: VertexId): Either[SurfaceDecorationError, Xyz] =
     mesh.samplePositions match
       case Some(samples) if mesh.sourceVertices.nonEmpty && vertex.index * 3 + 2 < samples.length =>
-        Right(SurfaceDecorationWorldPoint(samples(vertex.index * 3), samples(vertex.index * 3 + 1), samples(vertex.index * 3 + 2)))
+        Right(Xyz(samples(vertex.index * 3), samples(vertex.index * 3 + 1), samples(vertex.index * 3 + 2)))
       case _ =>
         val render = sourceRenderVertex(mesh, vertex)
         render match
           case None => Left(SurfaceDecorationError.VertexOutOfRange(surface, vertex))
-          case Some(index) => Right(SurfaceDecorationWorldPoint(mesh.positions(index * 3), mesh.positions(index * 3 + 1), mesh.positions(index * 3 + 2)))
+          case Some(index) => Right(Xyz(mesh.positions(index * 3), mesh.positions(index * 3 + 1), mesh.positions(index * 3 + 2)))
 
   private def contourPoint(mesh: SurfaceMeshPacket, contour: SurfaceContourDecoration,
-      vertex: VertexId): Either[SurfaceDecorationError, SurfaceDecorationWorldPoint] =
+      vertex: VertexId): Either[SurfaceDecorationError, Xyz] =
     vertexPoint(mesh, contour.surface, vertex).flatMap: point =>
       if contour.offset.worldUnits == 0.0 then Right(point)
       else
@@ -333,7 +331,7 @@ object SurfaceDecorationCompiler:
           else
             val scale = contour.offset.worldUnits / length
             val shifted = Vector(point.x + x * scale, point.y + y * scale, point.z + z * scale)
-            if shifted.forall(_.isFinite) then Right(SurfaceDecorationWorldPoint(shifted(0), shifted(1), shifted(2)))
+            if shifted.forall(_.isFinite) then Right(Xyz(shifted(0), shifted(1), shifted(2)))
             else Left(SurfaceDecorationError.InvalidContourOffset(contour.offset.worldUnits))
 
   /** Nearest-partition output contains generated points attributed to a source
@@ -355,7 +353,7 @@ object SurfaceDecorationCompiler:
       index += 1
     exact.orElse(first)
 
-  private def translated(point: SurfaceDecorationWorldPoint, instance: SurfaceCompositionInstance): SurfaceDecorationWorldPoint =
-    SurfaceDecorationWorldPoint(point.x + instance.translationX, point.y + instance.translationY, point.z + instance.translationZ)
+  private def translated(point: Xyz, instance: SurfaceCompositionInstance): Xyz =
+    Xyz(point.x + instance.translationX, point.y + instance.translationY, point.z + instance.translationZ)
 
   private def duplicate[A](values: Vector[A]): Option[A] = values.find(value => values.count(_ == value) > 1)

@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view
 
+import spatial4s.Xyz
 import intaglio.Rgba32
 import neurosurf4s.surface.{FaceId, VertexId}
 
@@ -43,11 +44,11 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
     val base = ok(SurfaceCompositionPlan.fromLegacy(SurfaceFaceFixture.plan))
     ok(SurfaceCompositionPlan.make(Vector(base.views.head.copy(camera = cameraPacket, viewportFit = fit)), base.resources))
 
-  private def pixelPacket(plan: SurfaceCompositionPlan, point: SurfaceDecorationWorldPoint): SurfaceMarkerPacket =
+  private def pixelPacket(plan: SurfaceCompositionPlan, point: Xyz): SurfaceMarkerPacket =
     val marker = SurfaceMarkerDecoration(markerId, anchor, SurfaceMarkerShape.Disk, ok(SurfaceDecorationSize.pixels(10)), black)
     ok(SurfaceDecorationCompiler.compile(Vector(marker), plan)).markers.head.copy(point = point)
 
-  private def project(camera: SurfaceCameraPacket, point: SurfaceDecorationWorldPoint,
+  private def project(camera: SurfaceCameraPacket, point: Xyz,
       width: Int, height: Int): (Double, Double) =
     val view = camera.viewMatrix
     val projection = camera.projectionMatrix
@@ -60,8 +61,8 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
     val cw = projection(12) * ex + projection(13) * ey + projection(14) * ez + projection(15) * ew
     ((cx / cw + 1.0) * width / 2.0, (cy / cw + 1.0) * height / 2.0)
 
-  private def point(mesh: SurfaceDecorationMesh, vertex: Int): SurfaceDecorationWorldPoint =
-    SurfaceDecorationWorldPoint(mesh.positions(vertex * 3), mesh.positions(vertex * 3 + 1), mesh.positions(vertex * 3 + 2))
+  private def point(mesh: SurfaceDecorationMesh, vertex: Int): Xyz =
+    Xyz(mesh.positions(vertex * 3), mesh.positions(vertex * 3 + 1), mesh.positions(vertex * 3 + 2))
 
   private def distance(left: (Double, Double), right: (Double, Double)): Double =
     math.hypot(left._1 - right._1, left._2 - right._2)
@@ -71,7 +72,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
     shifted(3) = -.5f
     shifted(7) = .25f
     val plan = planFor(camera(shifted))
-    val centre = SurfaceDecorationWorldPoint(0, 0, 0)
+    val centre = Xyz(0, 0, 0)
     val marker = pixelPacket(plan, centre)
     val geometry = ok(SurfaceDecorationGeometry.lower(
       SurfaceDecorationPackets(Vector(marker), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)), plan, 400, 200))
@@ -84,10 +85,10 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("overlay picking follows declared mesh order regardless of world depth"):
     val plan = planFor(camera(orthographic))
-    val near = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 1)).copy(
+    val near = pixelPacket(plan, Xyz(0, 0, 1)).copy(
       depthPolicy = SurfaceDecorationDepthPolicy.Overlay)
     val far = near.copy(id = SurfaceDecorationElementId(ok(SurfaceDecorationId.make("far-overlay")), "glyph"),
-      point = SurfaceDecorationWorldPoint(0, 0, -1))
+      point = Xyz(0, 0, -1))
     val geometry = ok(SurfaceDecorationGeometry.lower(
       SurfaceDecorationPackets(Vector(near, far), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)), plan, 400, 200))
     assertEquals(SurfaceDecorationPicking.pick(geometry, plan, 200, 100, Some(0.0)).map(_.id), Some(far.id))
@@ -131,8 +132,8 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
         Vector(1, 2, 2, 2), SurfaceContourPolicy.Transitions, style)
       val source = ok(SurfaceDecorationCompiler.compile(Vector(contour), plan))
       // Short diagonal edges discriminate round end caps from butt-ended bands.
-      val first = source.contours.head.copy(start = SurfaceDecorationWorldPoint(-.03, -.02, .2),
-        end = SurfaceDecorationWorldPoint(.03, .02, -.2))
+      val first = source.contours.head.copy(start = Xyz(-.03, -.02, .2),
+        end = Xyz(.03, .02, -.2))
       val second = first.copy(id = SurfaceDecorationElementId(first.id.decoration, "second"))
       val packets = source.copy(contours = Vector(first, second))
       val geometry = ok(SurfaceDecorationGeometry.lower(packets, plan, width, height))
@@ -142,7 +143,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
       assert(SurfaceDecorationValidation.validate(geometry.copy(meshes = Vector(replaced)), plan, width, height).isLeft)
       assert(SurfaceDecorationValidation.validate(geometry.copy(meshes = Vector(firstMesh.copy(roundedStroke = None))), plan, width, height).isLeft)
       if projection(15) == 0 then
-        val behind = first.copy(start = SurfaceDecorationWorldPoint(0, 0, 6))
+        val behind = first.copy(start = Xyz(0, 0, 6))
         assertEquals(SurfaceDecorationGeometry.lower(packets.copy(contours = Vector(behind)), plan, width, height),
           Left(SurfaceDecorationError.InvalidProjection))
       assertEquals(geometry.meshes.map(_.id.suffix), Vector(first.id.suffix, "second", s"${first.id.suffix}-halo", "second-halo"))
@@ -170,7 +171,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("ordered depth testing refuses arbitrary translucent spheres and copied capsule geometry"):
     val plan = planFor(camera(orthographic))
-    val sphere = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0)).copy(
+    val sphere = pixelPacket(plan, Xyz(0, 0, 0)).copy(
       shape = SurfaceMarkerShape.Sphere, size = ok(SurfaceDecorationSize.world(.2)),
       color = Rgba32.unsafe(255, 0, 0, 153), depthPolicy = SurfaceDecorationDepthPolicy.OrderedDepthTest)
     val geometry = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector(sphere), Vector.empty,
@@ -179,21 +180,21 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("pixel marker axes follow rectangular Fill and square Contain viewports"):
     val fill = planFor(camera(orthographic))
-    val fillPacket = pixelPacket(fill, SurfaceDecorationWorldPoint(0, 0, 0))
+    val fillPacket = pixelPacket(fill, Xyz(0, 0, 0))
     val fillMesh = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector(fillPacket), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(fill, 1, 1)), fill, 400, 200)).meshes.head
     assertEqualsDouble(fillMesh.positions(3), .05, 1e-6)
     assertEqualsDouble(fillMesh.positions(16), .1, 1e-6)
 
     val contain = planFor(camera(orthographic), SurfaceViewportFit.Contain(1.0))
-    val containPacket = pixelPacket(contain, SurfaceDecorationWorldPoint(0, 0, 0))
+    val containPacket = pixelPacket(contain, Xyz(0, 0, 0))
     val containMesh = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector(containPacket), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(contain, 1, 1)), contain, 400, 200)).meshes.head
     assertEqualsDouble(containMesh.positions(3), .1, 1e-6)
     assertEqualsDouble(containMesh.positions(16), .1, 1e-6)
 
   test("perspective pixel radius changes with depth while world radius does not"):
     val plan = planFor(camera(perspective))
-    val near = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0))
-    val far = near.copy(point = SurfaceDecorationWorldPoint(0, 0, -5))
+    val near = pixelPacket(plan, Xyz(0, 0, 0))
+    val far = near.copy(point = Xyz(0, 0, -5))
     val pixelGeometry = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector(near, far), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)), plan, 200, 200))
     assertEqualsDouble(pixelGeometry.meshes(1).positions(3) / pixelGeometry.meshes.head.positions(3), 2.0, 1e-6)
 
@@ -206,7 +207,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
     val rolled = camera(orthographic).copy(viewMatrix = new FloatBufferView(rolledView))
     val plan = planFor(rolled)
     val mesh = ok(SurfaceDecorationGeometry.lower(
-      SurfaceDecorationPackets(Vector(pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0))), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)),
+      SurfaceDecorationPackets(Vector(pixelPacket(plan, Xyz(0, 0, 0))), Vector.empty, Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)),
       plan, 400, 200)).meshes.head
     assertEqualsDouble(mesh.positions(3), 0.0, 1e-6)
     assertEqualsDouble(mesh.positions(4), .05, 1e-6)
@@ -215,9 +216,9 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("pixel contour is full projected width and halo bands are outside its core"):
     val plan = planFor(camera(perspective))
-    val marker = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0))
+    val marker = pixelPacket(plan, Xyz(0, 0, 0))
     val contour = SurfaceContourPacket(SurfaceDecorationElementId(markerId, "projected-edge"), marker.origin, surface,
-      VertexId(0) -> VertexId(1), SurfaceDecorationWorldPoint(0, 0, 0), SurfaceDecorationWorldPoint(1, 0, -5),
+      VertexId(0) -> VertexId(1), Xyz(0, 0, 0), Xyz(1, 0, -5),
       SurfaceContourStyle(ok(SurfaceDecorationSize.pixels(10)), black,
         Some(SurfaceContourHalo(black, ok(SurfaceDecorationSize.pixels(4))))))
     val meshes = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector.empty, Vector.empty, Vector(contour), SurfaceDecorationBinding.key(plan, 1, 1)), plan, 200, 200)).meshes
@@ -233,7 +234,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("degenerate contour remains finite and anisotropic pixel spheres refuse lowering"):
     val plan = planFor(camera(orthographic))
-    val marker = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0))
+    val marker = pixelPacket(plan, Xyz(0, 0, 0))
     val contour = SurfaceContourPacket(SurfaceDecorationElementId(markerId, "degenerate-edge"), marker.origin, surface,
       VertexId(0) -> VertexId(0), marker.point, marker.point,
       SurfaceContourStyle(ok(SurfaceDecorationSize.world(.1)), black))
@@ -255,7 +256,7 @@ class SurfaceDecorationGeometrySuite extends munit.FunSuite:
 
   test("sphere marker retains radius, outward winding and nondegenerate pole faces"):
     val plan = planFor(camera(orthographic))
-    val marker = pixelPacket(plan, SurfaceDecorationWorldPoint(0, 0, 0))
+    val marker = pixelPacket(plan, Xyz(0, 0, 0))
       .copy(shape = SurfaceMarkerShape.Sphere, size = ok(SurfaceDecorationSize.world(2)))
     val mesh = ok(SurfaceDecorationGeometry.lower(SurfaceDecorationPackets(Vector(marker), Vector.empty,
       Vector.empty, SurfaceDecorationBinding.key(plan, 1, 1)), plan, 200, 200)).meshes.head

@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view
 
+import spatial4s.Xyz
 import intaglio.*
 
 /** Resolves decoration hits against the same view ray as a native scientific
@@ -9,7 +10,7 @@ import intaglio.*
 object SurfaceDecorationPicking:
   final case class Projected(x: Double, y: Double, depth: Double)
 
-  def project(plan: SurfaceCompositionPlan, viewId: SurfaceViewId, point: SurfaceDecorationWorldPoint,
+  def project(plan: SurfaceCompositionPlan, viewId: SurfaceViewId, point: Xyz,
       width: Int, height: Int): Option[Projected] =
     plan.views.find(_.id == viewId).flatMap: view =>
       val m = view.camera.viewMatrix

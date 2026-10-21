@@ -14,7 +14,7 @@ object SurfaceResourceKey:
 final class FloatBufferView private[view] (private val values: Array[Float]):
   def length: Int = values.length
   inline def apply(index: Int): Float = values(index)
-  private[scalafim] def unsafeArray: Array[Float] = values
+  private[view] def unsafeArray: Array[Float] = values
 
 /** Raw scalar samples retain Double precision, including nonfinite values. */
 final class DoubleBufferView private[view] (private val values: Array[Double]):
@@ -29,7 +29,7 @@ final class SurfaceScalarPacket private[view] (
 final class IntBufferView private[view] (private val values: Array[Int]):
   def length: Int = values.length
   inline def apply(index: Int): Int = values(index)
-  private[scalafim] def unsafeArray: Array[Int] = values
+  private[view] def unsafeArray: Array[Int] = values
 
 final case class SurfaceViewport(x: Double, y: Double, width: Double, height: Double)
 

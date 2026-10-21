@@ -1,5 +1,6 @@
 package neurosurf4s.surface.view
 
+import spatial4s.Xyz
 import intaglio.Rgba32
 import neurosurf4s.surface.VertexId
 
@@ -138,7 +139,7 @@ object SurfaceNetworkDecorations:
     error.fold[Either[SurfaceDecorationError, Vector[SurfaceDecorationMesh]]](Right(output.result()))(Left(_))
 
   private def endpoint(node: SurfaceNetworkNode, plan: SurfaceCompositionPlan,
-      mapping: SurfaceNetworkDecorationMapping): Either[SurfaceDecorationError, SurfaceDecorationWorldPoint] =
+      mapping: SurfaceNetworkDecorationMapping): Either[SurfaceDecorationError, Xyz] =
     val instance = mapping.instances.get(node.surface).toRight(SurfaceDecorationError.NetworkMapping(
       s"network mapping is missing '${node.surface.value}'"))
     instance.flatMap: id =>
@@ -147,10 +148,10 @@ object SurfaceNetworkDecorations:
         case Some(value) =>
           plan.resources.meshes.get(value.mesh).toRight(SurfaceDecorationError.NetworkMapping("network instance mesh is absent")).flatMap: mesh =>
             SurfaceDecorationCompiler.resolve(SurfaceDecorationAnchor.Vertex(SurfaceVertexAnchor.make(node.surface, node.vertex)), mesh).map: point =>
-              SurfaceDecorationWorldPoint(point.x + value.translationX, point.y + value.translationY, point.z + value.translationZ)
+              Xyz(point.x + value.translationX, point.y + value.translationY, point.z + value.translationZ)
 
   private def tube(id: SurfaceDecorationId, occurrence: Int, edge: SurfaceNetworkDisplayEdge,
-      start: SurfaceDecorationWorldPoint, end: SurfaceDecorationWorldPoint, radiusPolicy: SurfaceNetworkDecorationRadius,
+      start: Xyz, end: Xyz, radiusPolicy: SurfaceNetworkDecorationRadius,
       sides: Int, mapping: SurfaceNetworkDecorationMapping,
       depthPolicy: SurfaceDecorationDepthPolicy): Either[SurfaceDecorationError, SurfaceDecorationMesh] =
     val r = radiusPolicy.radiusFor(edge.weight)
@@ -207,7 +208,7 @@ object SurfaceNetworkDecorations:
   /** A line is a camera-facing world ribbon. It remains independent of the
     * scientific mesh, unlike the legacy network compiler's appended faces. */
   private def ribbon(id: SurfaceDecorationId, occurrence: Int, edge: SurfaceNetworkDisplayEdge,
-      start: SurfaceDecorationWorldPoint, end: SurfaceDecorationWorldPoint, radiusPolicy: SurfaceNetworkDecorationRadius,
+      start: Xyz, end: Xyz, radiusPolicy: SurfaceNetworkDecorationRadius,
       plan: SurfaceCompositionPlan, mapping: SurfaceNetworkDecorationMapping,
       depthPolicy: SurfaceDecorationDepthPolicy): Either[SurfaceDecorationError, SurfaceDecorationMesh] =
     val dx = end.x - start.x
