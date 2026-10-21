@@ -20,7 +20,7 @@ sbt "viewExamplesJVM/runMain neurosurf4s.examples.surfaceview.JavaFxSurfaceViewe
 ```
 
 For the browser example, link the classic script, serve `~/code`, and open
-`http://127.0.0.1:8000/scala/scalafim/examples/surface-view/browser/`:
+`http://127.0.0.1:8000/scala/neurosurf4s/examples/surface-view/browser/`:
 
 ```sh
 sbt viewExamplesJS/fastLinkJS
@@ -58,7 +58,7 @@ directory argument to use an equivalent corpus.
 sbt "viewExamplesJVM/Test/runMain neurosurf4s.surface.view.javafx.JavaFxCorticalAcceptanceProbe"
 sbt viewExamplesJS/fastLinkJS
 cd ~/code && python -m http.server 8000 --bind 127.0.0.1
-# open http://127.0.0.1:8000/scala/scalafim/examples/surface-view/browser/cortical.html
+# open http://127.0.0.1:8000/scala/neurosurf4s/examples/surface-view/browser/cortical.html
 ```
 
 Both files are verified by SHA-256 before decoding. The shared Scala fixture

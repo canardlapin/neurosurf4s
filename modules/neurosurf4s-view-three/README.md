@@ -44,12 +44,12 @@ The production project uses the repository-wide CommonJS setting. To build the
 standalone real-browser acceptance probe as a classic script:
 
 ```text
-sbt 'set viewThreeJS / scalaJSLinkerConfig ~= (_.withModuleKind(org.scalajs.linker.interface.ModuleKind.NoModule))' viewThreeJS/fastLinkJS
+sbt 'set viewExamplesJS / scalaJSLinkerConfig ~= (_.withModuleKind(org.scalajs.linker.interface.ModuleKind.NoModule))' viewExamplesJS/fastLinkJS
 ```
 
 The checked-in harness resolves the linked output and the local SurfViewJS
 Three.js installation relative to `~/code`; serve `~/code` and open
-`/scala/scalafim/modules/surface-view-three/browser/index.html`.
+`/scala/neurosurf4s/modules/neurosurf4s-view-three/browser/index.html`.
 
 See [`docs/surface-viewer.md`](../../docs/surface-viewer.md) for the shared
 scientific contract, host lifecycle, feature gates, and example application.
