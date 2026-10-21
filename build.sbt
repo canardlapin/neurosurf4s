@@ -109,8 +109,46 @@ lazy val fixtures = crossProject(JSPlatform, JVMPlatform)
   .jvmConfigure(_.dependsOn(spatialIoJVM, volumeIoJVM))
   .jsSettings(jsSettings)
 
+// Optional surface display; scientific volume and linking integrations remain separate.
+lazy val intaglioRevision = "d553c327824f9916b1c0a055226c6c5e8f77bc59"
+lazy val intaglioBuild = pinned("intaglio", intaglioRevision)
+
+lazy val view = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view"))
+  .dependsOn(core)
+  .settings(commonSettings).settings(name := "neurosurf4s-view")
+  .jvmConfigure(_.dependsOn(ProjectRef(intaglioBuild, "coreJVM")))
+  .jsConfigure(_.dependsOn(ProjectRef(intaglioBuild, "coreJS")))
+  .jsSettings(jsSettings)
+
+lazy val viewLink = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-link"))
+  .dependsOn(view)
+  .settings(commonSettings).settings(name := "neurosurf4s-view-link")
+  .jvmConfigure(_.dependsOn(ProjectRef(reframe4sBuild, "reframe4s-coreJVM"), ProjectRef(reframe4sBuild, "reframe4s-lieJVM") % "test->compile"))
+  .jsConfigure(_.dependsOn(ProjectRef(reframe4sBuild, "reframe4s-coreJS"), ProjectRef(reframe4sBuild, "reframe4s-lieJS") % "test->compile"))
+  .jsSettings(jsSettings)
+
+lazy val viewVolume = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-volume"))
+  .dependsOn(view, volume, viewLink % "test->compile")
+  .settings(commonSettings).settings(name := "neurosurf4s-view-volume")
+  .jsSettings(jsSettings)
+
+lazy val viewFixtures = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-fixtures"))
+  .dependsOn(viewVolume)
+  .settings(commonSettings).settings(name := "neurosurf4s-view-fixtures", publish / skip := true)
+  .jsSettings(jsSettings)
+
+lazy val viewRaster = crossProject(JSPlatform, JVMPlatform)
+  .crossType(CrossType.Full).in(file("modules/neurosurf4s-view-raster"))
+  .dependsOn(view, viewFixtures % "test->compile")
+  .settings(commonSettings).settings(name := "neurosurf4s-view-raster")
+  .jsSettings(jsSettings)
+
 lazy val root = project.in(file("."))
-  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js)
+  .aggregate(core.jvm, core.js, io.jvm, io.js, spatial.jvm, spatial.js, spatialIoJVM, volume.jvm, volume.js, volumeIoJVM, fixtures.jvm, fixtures.js, view.jvm, view.js, viewLink.jvm, viewLink.js, viewVolume.jvm, viewVolume.js, viewFixtures.jvm, viewFixtures.js, viewRaster.jvm, viewRaster.js)
   .settings(name := "neurosurf4s-root", publish / skip := true)
 
 addCommandAlias("neurosurf4sCoreTestAll", ";coreJVM/test;coreJS/test;ioJVM/test;ioJS/test")
@@ -118,3 +156,5 @@ addCommandAlias("neurosurf4sSpatialTestAll", ";spatialJVM/test;spatialJS/test;sp
 addCommandAlias("neurosurf4sVolumeTestAll", ";volumeJVM/test;volumeJS/test;volumeIoJVM/test")
 
 addCommandAlias("neurosurf4sFixtureTestAll", ";fixturesJVM/test;fixturesJS/test")
+
+addCommandAlias("neurosurf4sViewTestAll", ";viewJVM/test;viewJS/test;viewLinkJVM/test;viewLinkJS/test;viewVolumeJVM/test;viewVolumeJS/test;viewRasterJVM/test;viewRasterJS/test")
