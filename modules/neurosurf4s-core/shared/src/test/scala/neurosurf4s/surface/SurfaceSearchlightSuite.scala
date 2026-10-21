@@ -58,4 +58,5 @@ class SurfaceSearchlightSuite extends munit.FunSuite:
       val other = SurfaceLocusDomain.semantic(DomainId.parse("other").toOption.get, SurfaceTestFixtures.tetraGeometry).toOption.get
       SurfaceSearchlight.metricBalls(domain, topology, 1.0, Region.whole(other.value.finiteSpace))
     """)
-    assert(errors.contains("Required:"), errors)
+    assert(errors.contains("None of the overloaded alternatives") && errors.contains("match arguments"), errors)
+    assertNoDiff(compileErrors("SurfaceSearchlight.metricBalls(domain, topology, 1.0, Region.whole(domain.finiteSpace))"), "")
