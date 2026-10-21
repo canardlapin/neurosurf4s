@@ -1,7 +1,6 @@
 package neurosurf4s.surface.view
 
 import intaglio.*
-import neuroim4s.image.{x, y, z}
 import neurosurf4s.surface.*
 import java.io.{BufferedInputStream, BufferedOutputStream, DataInputStream, DataOutputStream}
 import java.nio.file.{Files, Path}

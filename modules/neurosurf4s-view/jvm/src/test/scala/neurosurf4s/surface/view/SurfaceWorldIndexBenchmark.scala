@@ -1,6 +1,6 @@
 package neurosurf4s.surface.view
 
-import neuroim4s.image.WorldPoint
+import spatial4s.Xyz
 import neurosurf4s.surface.*
 import com.sun.management.ThreadMXBean
 import java.lang.management.ManagementFactory
@@ -26,8 +26,8 @@ object SurfaceWorldIndexBenchmark:
       val geometry = SurfaceGeometry(TriangleMesh.fromArrays(coordinates, Array(0, 1, 2)), Hemisphere.Left, SurfaceKind.Pial)
       val id = SurfaceId.unsafe("synthetic")
       val radius = SurfaceLinkRadius.unsafe(Double.MaxValue)
-      val queries = Vector.tabulate(1000)(i => WorldPoint(math.sin(i * 0.37) * 90, math.cos(i * 0.29) * 80, math.sin(i * 0.11) * 70))
-      def scan(q: WorldPoint): Int =
+      val queries = Vector.tabulate(1000)(i => Xyz(math.sin(i * 0.37) * 90, math.cos(i * 0.29) * 80, math.sin(i * 0.11) * 70))
+      def scan(q: Xyz): Int =
         var best = 0
         var squared = Double.PositiveInfinity
         var vertex = 0
@@ -51,7 +51,7 @@ object SurfaceWorldIndexBenchmark:
         checksum += scan(q)
         checksum += index.nearestVertex(q, radius).toOption.get.vertex.index)
       queries.foreach(q => require(scan(q) == index.nearestVertex(q, radius).toOption.get.vertex.index))
-      def measure(f: WorldPoint => Int): (Long, Long) =
+      def measure(f: Xyz => Int): (Long, Long) =
         val a = allocated
         val t = System.nanoTime()
         queries.foreach(q => checksum += f(q))

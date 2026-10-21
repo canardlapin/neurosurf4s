@@ -3,6 +3,7 @@ package neurosurf4s.surface.view
 import neurosurf4s.surface.*
 
 class SurfacePairedCameraSuite extends munit.FunSuite:
+  private val displayFrame = spatial4s.Frame.named[spatial4s.D3]("paired-camera fixture").toOption.get
   private val left = SurfaceId.unsafe("left")
   private val right = SurfaceId.unsafe("right")
 
@@ -102,7 +103,7 @@ class SurfacePairedCameraSuite extends munit.FunSuite:
 
   test("an explicit typed pose remains authoritative over a single-surface override"):
     val base = SurfaceViewerState.initial(model)
-    val display = SurfaceDisplayFrame.declare(model, left, SurfaceDisplayWorld.frame).toOption.get
+    val display = SurfaceDisplayFrame.declare(model, left, displayFrame).toOption.get
     val pose = SurfaceCompiler.cameraPose(model, base, display).toOption.get
     val overridden = base.copy(surfaceViewpoints = Map(left -> SurfaceViewpoint.Medial(CorticalHemisphere.Left)))
     val expected = SurfaceCompiler.compile(model, base, display, pose).toOption.get
