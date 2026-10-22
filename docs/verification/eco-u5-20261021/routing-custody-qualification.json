@@ -1,0 +1,42 @@
+{
+  "source": "62a913245fb6b4fafea0d157702eda217b04497d",
+  "gate": {
+    "schema_version": 1,
+    "started_utc": "2026-10-22T01:47:56.128568+00:00",
+    "finished_utc": "2026-10-22T01:48:02.133521+00:00",
+    "duration_seconds": 6.004379,
+    "command": [
+      "env",
+      "-u",
+      "JAVA_TOOL_OPTIONS",
+      "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+      "SBT_WARM_HEAP=6g",
+      "python3",
+      "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+      "routingJVM/test",
+      "routingJS/test"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s-eco-routing-20261021",
+    "log": "/tmp/neurosurf4s-eco-u5-routing-43.log",
+    "exit_code": 0,
+    "child_returncode": 0,
+    "reason": "exited",
+    "detail": null,
+    "timeout_seconds": 1800.0,
+    "log_bytes": 18132
+  },
+  "results": {
+    "routingJVM": 109,
+    "routingJS": 105,
+    "skipped": 0
+  },
+  "review": {
+    "verdict": "APPROVE",
+    "reviewer": "/root/volume_view_astra_review",
+    "scope": "4 byte-identical raw fixture files; package-only equality suite; R destinations and generated package only; numerical generator logic unchanged",
+    "minor_comments_resolved": true
+  },
+  "production_and_build_unchanged_from": "c9b05c72e2e452d66dcff8603ea96f589d3572fd",
+  "R_parse": "both generators parsed successfully; startup locale warnings retained in console; no oracle regeneration performed",
+  "raw_sha256": "7e726d2678d5a41907e40b4fcd940284d257c06d45c3fbaed100eef965f46da8"
+}

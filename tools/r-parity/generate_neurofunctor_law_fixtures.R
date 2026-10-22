@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# neurofunctor law fixtures for scalafim.spatial (STP P7.06).
+# neurofunctor law fixtures for neurosurf4s.routing (STP P7.06).
 #
 # Replays the laws neurofunctor's own tests check (tests/testthat/
 # test-functor-laws.R, test-qc.R, test-hybrid-projector.R, test-field.R) on

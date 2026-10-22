@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 
-# Routing-parity oracle for scalafim.spatial.SpatialGraph (STP P7.02).
+# Routing-parity oracle for neurosurf4s.routing.SpatialGraph (STP P7.02).
 #
 # Builds a small neurofunctor BrainGraph with forward affine edges and
 # warp edges whose inverses carry declared qualities, then records what
