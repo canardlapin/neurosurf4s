@@ -1,0 +1,39 @@
+{
+  "source": "cffda705feb3bdbecc6636ff5b8d87ec48bf0f11",
+  "delta": "Test ownership only; production modules and build unchanged from reviewed b1a2cf7f09db59f3d3520fcdd4cc8eefde33bd60. Existing external admission checks moved to public neurosurf4s routing namespace.",
+  "gate": {
+    "schema_version": 1,
+    "started_utc": "2026-10-22T01:38:20.832820+00:00",
+    "finished_utc": "2026-10-22T01:39:10.699479+00:00",
+    "duration_seconds": 49.866614,
+    "command": [
+      "env",
+      "-u",
+      "JAVA_TOOL_OPTIONS",
+      "JAVA_HOME=/Users/bbuchsbaum/Library/Java/JavaVirtualMachines/openjdk-22/Contents/Home",
+      "SBT_WARM_HEAP=6g",
+      "python3",
+      "/Users/bbuchsbaum/code/scala/scalafim-eco-mesh-kernels-20261020/tools/build/sbt-warm",
+      "routingJVM/test",
+      "routingJS/test"
+    ],
+    "cwd": "/Users/bbuchsbaum/code/scala/neurosurf4s-eco-routing-20261021",
+    "log": "/tmp/neurosurf4s-eco-u5-routing-40.log",
+    "exit_code": 0,
+    "child_returncode": 0,
+    "reason": "exited",
+    "detail": null,
+    "timeout_seconds": 1800.0,
+    "log_bytes": 25272
+  },
+  "results": {
+    "routingJVM": {
+      "passed": 105
+    },
+    "routingJS": {
+      "passed": 105
+    }
+  },
+  "raw_log_archive": "routing-boundary-40.log.gz",
+  "raw_log_sha256": "e62238213f99855f871e9c67b74da9f0ba46d3c6a53d260558bda0db7358840a"
+}
