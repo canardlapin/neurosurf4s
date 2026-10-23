@@ -242,8 +242,8 @@ class JavaFxSurfaceProbeSuite extends munit.FunSuite:
     val config = JavaFxAtlasConfig.make(lightingPolicy = JavaFxAtlasLighting.WorldVertexLambert).toOption.get
     val worldLit = JavaFxSurfaceProbe.compile(renderPlan, JavaFxMaterialMode.Lit, config).toOption.get
     assertEquals(lightCount(worldLit), worldLit.surfaceGroups.size)
-    worldLit.setMaterialMode(JavaFxMaterialMode.Unlit).toOption.get
-    worldLit.setMaterialMode(JavaFxMaterialMode.Lit).toOption.get
+    worldLit.updateColors(renderPlan, commit = false, mode = JavaFxMaterialMode.Unlit).toOption.get
+    worldLit.updateColors(renderPlan, commit = false, mode = JavaFxMaterialMode.Lit).toOption.get
     assertEquals(lightCount(worldLit), worldLit.surfaceGroups.size)
 
   test("style and data updates touch atlases without rebuilding geometry"):

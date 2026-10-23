@@ -252,7 +252,21 @@ object JavaFxColorPreparationProbe:
           require(materialReceipt.dirty.material, "lighting change did not reach the native material")
           require(renderer.render(collision, beforeMaterial).isLeft,
             "successful material change did not expire preparation")
-          println("PASS: same-key colour upload; worker preparation; live camera/selection; foreign and stale A-B-A refusal; failed publication preserves controller; no geometry upload")
+          val worldConfig = JavaFxAtlasConfig.make(lightingPolicy = JavaFxAtlasLighting.WorldVertexLambert).toOption.get
+          val worldRenderer = JavaFxSurfaceBackend.create(worldConfig).toOption.get
+          try
+            worldRenderer.render(original).toOption.get
+            val quarter = SurfaceLighting.directional(0.25, 0.0, 0.0, 0.0, 1.0).toOption.get
+            val worldReceipt = worldRenderer.render(original.copy(lighting = quarter)).toOption.get
+            require(worldReceipt.dirty.material && worldReceipt.atlasUpdates == 1,
+              "world-Lambert material transition did not commit its atlas on the FX thread")
+            require(worldRenderer.chunks.head.atlas.image.getPixelReader.getArgb(1, 1) == 0xff400000,
+              "world-Lambert material transition published the wrong shaded colour")
+            worldRenderer.render(original).toOption.get
+            require(worldRenderer.chunks.head.atlas.image.getPixelReader.getArgb(1, 1) == 0xffff0000,
+              "world-Lambert Unlit restoration did not commit the original colour")
+          finally worldRenderer.dispose().fold(error => throw IllegalStateException(error.message), identity)
+          println("PASS: same-key colour upload; worker preparation; live camera/selection; foreign and stale A-B-A refusal; invalid camera refusal; world-Lambert FX material commits and Unlit restoration; no geometry upload")
         catch case error: Throwable => record(error)
         finally
           try cleanup(controller.foreach(_.dispose()))
