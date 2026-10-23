@@ -230,7 +230,7 @@ class JavaFxSurfaceProbeSuite extends munit.FunSuite:
     import scala.jdk.CollectionConverters.*
     def lightCount(result: JavaFxSurfaceProbeResult): Int =
       result.surfaceGroups.values.toVector.flatMap(_.getChildren.asScala)
-        .count(_.isInstanceOf[javafx.scene.AmbientLight])
+        .count(_.isInstanceOf[_root_.javafx.scene.AmbientLight])
     val renderPlan = plan(geometry())
     val native = JavaFxSurfaceProbe.compile(renderPlan, JavaFxMaterialMode.Unlit).toOption.get
     assertEquals(lightCount(native), native.surfaceGroups.size)
