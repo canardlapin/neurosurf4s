@@ -226,6 +226,26 @@ class JavaFxSurfaceProbeSuite extends munit.FunSuite:
     assertEquals(lit.material.getSelfIlluminationMap, null)
     assert(unlit.material.getSelfIlluminationMap eq unlit.atlas.image)
 
+  test("native ambient lights follow unlit and world-Lambert material lifecycles"):
+    import scala.jdk.CollectionConverters.*
+    def lightCount(result: JavaFxSurfaceProbeResult): Int =
+      result.surfaceGroups.values.toVector.flatMap(_.getChildren.asScala)
+        .count(_.isInstanceOf[javafx.scene.AmbientLight])
+    val renderPlan = plan(geometry())
+    val native = JavaFxSurfaceProbe.compile(renderPlan, JavaFxMaterialMode.Unlit).toOption.get
+    assertEquals(lightCount(native), native.surfaceGroups.size)
+    native.setMaterialMode(JavaFxMaterialMode.Lit).toOption.get
+    assertEquals(lightCount(native), 0)
+    native.setMaterialMode(JavaFxMaterialMode.Unlit).toOption.get
+    native.setMaterialMode(JavaFxMaterialMode.Unlit).toOption.get
+    assertEquals(lightCount(native), native.surfaceGroups.size)
+    val config = JavaFxAtlasConfig.make(lightingPolicy = JavaFxAtlasLighting.WorldVertexLambert).toOption.get
+    val worldLit = JavaFxSurfaceProbe.compile(renderPlan, JavaFxMaterialMode.Lit, config).toOption.get
+    assertEquals(lightCount(worldLit), worldLit.surfaceGroups.size)
+    worldLit.setMaterialMode(JavaFxMaterialMode.Unlit).toOption.get
+    worldLit.setMaterialMode(JavaFxMaterialMode.Lit).toOption.get
+    assertEquals(lightCount(worldLit), worldLit.surfaceGroups.size)
+
   test("style and data updates touch atlases without rebuilding geometry"):
     val mesh = geometry()
     val redPlan = plan(mesh, Rgba32.unsafe(255, 0, 0))
