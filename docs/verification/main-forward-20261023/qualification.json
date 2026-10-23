@@ -1,0 +1,136 @@
+{
+  "source": "4b23386bf750118b9c7c1220b6c592da9ba965e0",
+  "production_source_reviewed": "16b32c423aba0742929a505f275261e3bcb92c80",
+  "production_delta_since_review": [],
+  "reviews": [
+    {
+      "source": "16b32c423aba0742929a505f275261e3bcb92c80",
+      "verdict": "APPROVE targeted static repairs",
+      "reviewer": "independent Astra expert"
+    },
+    {
+      "source": "60bf323bbdd7e067d8fdef1cbd1f66533cb4415f",
+      "verdict": "APPROVE test repair",
+      "reviewer": "independent Astra expert"
+    }
+  ],
+  "checks": [
+    {
+      "name": "view",
+      "exit_code": 0,
+      "log": "checks/eco-neurosurf-view-33.log.gz",
+      "counts": [
+        263,
+        263
+      ],
+      "duration_seconds": 350.476069,
+      "source": "16b32c423aba0742929a505f275261e3bcb92c80"
+    },
+    {
+      "name": "raster",
+      "exit_code": 0,
+      "log": "checks/eco-neurosurf-raster-36.log.gz",
+      "counts": [
+        72,
+        72
+      ],
+      "duration_seconds": 97.737542,
+      "source": "16b32c423aba0742929a505f275261e3bcb92c80"
+    },
+    {
+      "name": "backends",
+      "exit_code": 0,
+      "log": "checks/eco-neurosurf-backends-40.log.gz",
+      "counts": [
+        75,
+        51
+      ],
+      "duration_seconds": 51.950205,
+      "source": "60bf323bbdd7e067d8fdef1cbd1f66533cb4415f"
+    },
+    {
+      "name": "native-colors",
+      "exit_code": 0,
+      "log": "checks/eco-neurosurf-native-colors-41.log.gz",
+      "counts": [],
+      "duration_seconds": 48.227775,
+      "source": "60bf323bbdd7e067d8fdef1cbd1f66533cb4415f"
+    },
+    {
+      "name": "native-composition",
+      "exit_code": 0,
+      "log": "checks/eco-neurosurf-native-composition-42.log.gz",
+      "counts": [],
+      "duration_seconds": 16.080692,
+      "source": "4b23386bf750118b9c7c1220b6c592da9ba965e0"
+    }
+  ],
+  "native_composition": {
+    "passed": true,
+    "nativePicks": 4144,
+    "cameraOnlyUploads": 0,
+    "checks": [
+      {
+        "case": "crossing",
+        "interiorPicks": 357,
+        "emptySamples": 195
+      },
+      {
+        "case": "reversed",
+        "interiorPicks": 357,
+        "emptySamples": 195
+      },
+      {
+        "case": "panels",
+        "interiorPicks": 379,
+        "emptySamples": 177
+      },
+      {
+        "case": "independent-camera",
+        "interiorPicks": 372,
+        "emptySamples": 195
+      },
+      {
+        "case": "portrait-packed",
+        "interiorPicks": 1012,
+        "emptySamples": 624
+      },
+      {
+        "case": "resized",
+        "interiorPicks": 420,
+        "emptySamples": 424
+      },
+      {
+        "case": "translated",
+        "interiorPicks": 505,
+        "emptySamples": 319
+      },
+      {
+        "case": "perspective",
+        "interiorPicks": 371,
+        "emptySamples": 448
+      },
+      {
+        "case": "after-rejected-resource",
+        "interiorPicks": 371,
+        "emptySamples": 448
+      }
+    ]
+  },
+  "native_artifacts": {
+    "path": "/Volumes/My Passport for Mac/codex-work/plsneuro-eco-native-20261023/neurosurf-main-forward-native-20261023.tar.gz",
+    "bytes": 1124326,
+    "sha256": "a60c331a1bd40b263e13e80ac366ca615833847332e4be63278704c74d70df0a",
+    "verification": "all archive regular files rehashed against retained source; no links/special files"
+  },
+  "adverse_runs": {
+    "37": "test AmbientLight package shadow compile error; fixed6d88fcf",
+    "38": "74passed/1failed: newly added WorldLambert lifecycle test committed PixelBuffer offFX; fixed60bf323 by separating CPU bindings from actual Application-Thread commits"
+  },
+  "limits": [
+    "OpenJFX21.0.5 mac-aarch64 withJDK22; not PLSNeuro OpenJFX24 consumer qualification",
+    "No affine/adaptive production sampler admission or performance threshold change",
+    "Native synthetic functional/image/picking witnesses; not human visual or scientific acceptance",
+    "No main merge or hosted CI claim"
+  ]
+}
